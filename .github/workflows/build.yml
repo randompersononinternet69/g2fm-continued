@@ -21,7 +21,6 @@ jobs:
     - name: build
       run: |
         ./release.sh
-        echo "3" | ./build.sh
 
     - name: upload
       uses: marvinpinto/action-automatic-releases@latest
