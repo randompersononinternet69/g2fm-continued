@@ -2,7 +2,6 @@
 
 * * *
 
-[项目主页 (简体中文)](https://a1ive.github.io/grub2-filemanager/) 
 
 # Grub2 File Manager - CONTINUED
 ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
