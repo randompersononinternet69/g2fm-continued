@@ -1,15 +1,15 @@
-# THIS PROJECT IS NO LONGER BEING MAINTAINED 
+# IN BETA.
 
 * * *
 
 [项目主页 (简体中文)](https://a1ive.github.io/grub2-filemanager/) 
 
-# Grub2 File Manager 
+# Grub2 File Manager - CONTINUED
 ![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
-## Content
+## Table of Contents
 - [Preview](#preview)
-- [Support types of files](#support-types-of-files)
-- [Download](#download)
+- [Supported types of files](#supported-types-of-files)
+- [Download](download-grubfm-here.)
 - [Build](#build)
 - [Boot](#boot)
 - [Source code](#source-code)
@@ -18,24 +18,24 @@
 ## Preview
 
 ![preview.png](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/preview.png)
-## Support types of files
+## Supported types of files
 
 | Type                                                         | i386-pc | i386-efi | x86_64-efi |
 | :----------------------------------------------------------- | :-----: | :------: | :--------: |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/iso.png)WinPE ISO |    ✔️    |    ✔️     |     ✔️      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/linux.png)Linux ISO |    ✔️    |    ✔️     |     ✔️      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/android.png)Android ISO |    ✔️    |    ✔️     |     ✔️      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/bsd.png)BSD ISO |    ✔️    |    ❌     |     ❌      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/img.png)IMG (Disk Image) |    ✔️    |    ✔️     |     ✔️      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/vhd.png)VHD |    ✔️    |    ✔️     |     ✔️      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/nt6.png)WinPE WIM |    ✔️    |    ✔️     |     ✔️      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/nt5.png)NT5 WinPE |    ✔️    |    ❌     |     ❌      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/kernel.png)Linux/Multiboot Kernel |    ✔️    |    ✔️     |     ✔️      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/efi.png)EFI Application |    ❌    |    ✔️     |     ✔️      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/iso.png)WinPE ISO |    Supported    |    Supported     |     Supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/linux.png)Linux ISO |    Supported    |    Supported     |     Supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/android.png)Android ISO |    Supported    |    Supported     |     Supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/bsd.png)BSD ISO |    Supported    |    Not supported     |     Not supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/img.png)IMG (Disk Image) |    Supported    |    Supported     |     Supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/vhd.png)VHD |    Supported    |    Supported     |     Supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/nt6.png)WinPE WIM |    Supported    |    Supported     |     Supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/nt5.png)NT5 WinPE |    Supported    |    Not supported     |     Not supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/kernel.png)Linux/Multiboot Kernel |    Supported    |    Supported     |     Supported      |
+| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/efi.png)EFI Application |    Not supported    |    Supported     |     Supported      |
 
-## Download
+## Download GrubFM - CONTINUED [here. ](https://github.com/TCFFan123/g2fm-continued/releases)
 
-https://github.com/a1ive/grub2-filemanager/releases 
+
 ## Build
 	git clone https://github.com/a1ive/grub2-filemanager.git
 	cd grub2-filemanager
@@ -45,29 +45,29 @@ https://github.com/a1ive/grub2-filemanager/releases
 ### i386-pc 
 DO NOT boot grubfm.iso with memdisk!  
 #### GRUB4DOS 
-	map --mem /grubfm.iso (0xff)
+	map --mem /grubfm-cont.iso (0xff)
 	map --hook
 	chainloader (0xff)
 #### GRUB 2
 	linux /loadfm  
-	initrd /grubfm.iso  
+	initrd /grubfm-cont.iso  
 ### x86_64-efi
 
 #### GRUB 2 
 
-	chainloader /grubfmx64.efi
+	chainloader /grubfm-contx64.efi
 #### rEFInd 
-	loader /grubfmx64.efi
+	loader /grubfm-contx64.efi
 #### Systemd-boot 
-	efi /grubfmx64.efi
+	efi /grubfm-contx64.efi
+
+ You may also use the grubfm-multiarch ISO to boot GRUBFM on BIOS and UEFI. 
 ## Source code 
 GRUB2: https://github.com/a1ive/grub 
 
 ## USB Installers
 
-- [Easy2Boot](https://www.easy2boot.com/uefi-mbr-a1ive-grub2-file-manager/) 
-- [GrubFM Installer](https://github.com/QuestYouCraft/grubfm-installer) 
-- [SecureBoot-Grub2FM-Suite](https://github.com/abdullah-erturk/SecureBoot-Grub2FM-Suite)
+* None yet. If you want to have one featured here, please open an pull request.
 
 ## Related projects
 
@@ -79,3 +79,6 @@ GRUB2: https://github.com/a1ive/grub
 *	[Multiboot USB](http://mbusb.aguslr.com/) 
 *	[RUN](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=191301) 
 *	[Ventoy](https://github.com/ventoy/Ventoy)
+
+## The original
+https://github.com/a1ive/grub2-filemanager
