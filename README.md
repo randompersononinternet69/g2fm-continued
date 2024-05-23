@@ -22,24 +22,24 @@
 
 | Type                                                         | i386-pc | i386-efi | x86_64-efi |
 | :----------------------------------------------------------- | :-----: | :------: | :--------: |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/iso.png)WinPE ISO |    Supported    |    Supported     |     Supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/linux.png)Linux ISO |    Supported    |    Supported     |     Supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/android.png)Android ISO |    Supported    |    Supported     |     Supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/bsd.png)BSD ISO |    Supported    |    Not supported     |     Not supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/img.png)IMG (Disk Image) |    Supported    |    Supported     |     Supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/vhd.png)VHD |    Supported    |    Supported     |     Supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/nt6.png)WinPE WIM |    Supported    |    Supported     |     Supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/nt5.png)NT5 WinPE |    Supported    |    Not supported     |     Not supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/kernel.png)Linux/Multiboot Kernel |    Supported    |    Supported     |     Supported      |
-| ![img](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/images/efi.png)EFI Application |    Not supported    |    Supported     |     Supported      |
+| WinPE ISO |    Supported    |    Supported     |     Supported      |
+| Linux ISO |    Supported    |    Supported     |     Supported      |
+| Android ISO |    Supported    |    Supported     |     Supported      |
+| BSD ISO |    Supported    |    Not supported     |     Not supported      |
+| IMG (Disk Image) |    Supported    |    Supported     |     Supported      |
+| VHD |    Supported    |    Supported     |     Supported      |
+| WinPE WIM |    Supported    |    Supported     |     Supported      |
+| NT5 WinPE |    Supported    |    Not supported     |     Not supported      |
+| Linux/Multiboot Kernel |    Supported    |    Supported     |     Supported      |
+| EFI Application |    Not supported    |    Supported     |     Supported      |
 
 ## Download GrubFM - CONTINUED [here. ](https://github.com/TCFFan123/g2fm-continued/releases)
 
 
 ## Build
-	git clone https://github.com/a1ive/grub2-filemanager.git
-	cd grub2-filemanager
-	./update_grub2.sh
+	git clone https://github.com/TCFFan123/g2fm-continued.git
+	cd g2fm-continued.git
+	./update_grub.sh
 	./build.sh
 ## Boot 
 ### i386-pc 
