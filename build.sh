@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+echo -n Installing packages...
+sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso
 echo -n "checking for gettext ... "
 if [ -e "$(which msgfmt)" ]
 then
