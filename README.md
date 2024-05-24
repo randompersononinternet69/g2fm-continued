@@ -41,6 +41,7 @@
 	./update_grub.sh
 	./build.sh
 ## Boot 
+### It is recommended to use grubfm-cont-multiarch ISO.
 ### i386-pc 
 DO NOT boot grubfm.iso with memdisk!  
 #### GRUB4DOS 
@@ -60,7 +61,7 @@ DO NOT boot grubfm.iso with memdisk!
 #### Systemd-boot 
 	efi /grubfm-contx64.efi
 
- You may also use the grubfm-multiarch ISO to boot GRUBFM on BIOS and UEFI. 
+ 
 ## Source code 
 GRUB2: https://github.com/a1ive/grub 
 
