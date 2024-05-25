@@ -1,3 +1,4 @@
+# This is for booting Windows Install/PE ISOs
 source ${prefix}/func.sh;
 
 if [ -z "${grubfm_startbat}" -o ! -f "${grubfm_startbat}" ];
@@ -41,6 +42,7 @@ function win_isoboot {
 
 function xml_list {
   # autounattend.xml
+  echo Checking for autounattend.xml
   if [ -f "(${grubfm_device})${grubfm_dir}"*.xml ];
   then
     clear_menu;
@@ -56,6 +58,7 @@ function xml_list {
     done;
     source ${prefix}/global.sh;
   else
+    echo No autounattend.xml found.
     win_isoboot "${1}";
   fi;
 }
@@ -63,6 +66,7 @@ function xml_list {
 if test -f (loop)/sources/boot.wim; then
   xml_list "(loop)/sources/boot.wim";
 else
+  echo Found x86 boot.wim and x64 boot.wim
   if test -f (loop)/x64/sources/boot.wim; then
     menuentry $"Install Windows (x64)" --class nt6 {
       xml_list "(loop)/x64/sources/boot.wim";
