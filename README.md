@@ -15,8 +15,7 @@
 - [USB Installers](#usb-installers)
 - [Related projects](#related-projects)
 ## Preview
-
-![preview.png](https://github.com/a1ive/grub2-filemanager/raw/gh-pages/preview.png)
+![](https://imgur.com/a/JUvdqLn)
 ## Supported types of files
 
 | Type                                                         | i386-pc | i386-efi | x86_64-efi |
