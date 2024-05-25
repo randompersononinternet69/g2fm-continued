@@ -15,7 +15,7 @@
 - [USB Installers](#usb-installers)
 - [Related projects](#related-projects)
 ## Preview
-![](https://imgur.com/a/JUvdqLn)
+![](https://i.imgur.com/zgz3Xeb.png)
 ## Supported types of files
 
 | Type                                                         | i386-pc | i386-efi | x86_64-efi |
