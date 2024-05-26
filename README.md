@@ -4,7 +4,8 @@
 
 
 # Grub2 File Manager - CONTINUED
-![](https://img.shields.io/github/license/a1ive/grub2-filemanager.svg?style=flat) ![](https://img.shields.io/github/downloads/a1ive/grub2-filemanager/total.svg?style=flat) ![](https://img.shields.io/github/release/a1ive/grub2-filemanager.svg?style=flat) [![Crowdin](https://badges.crowdin.net/grub2-filemanager/localized.svg)](https://crowdin.com/project/grub2-filemanager)
+![image](https://github.com/TCFFan123/g2fm-continued/assets/107446530/c6d4f361-5f80-4e15-8241-7c76afa5b95c)
+
 ## Table of Contents
 - [Preview](#preview)
 - [Supported types of files](#supported-types-of-files)
