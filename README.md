@@ -4,12 +4,12 @@
 
 
 # Grub2 File Manager - CONTINUED
-![image](https://github.com/TCFFan123/g2fm-continued/assets/107446530/c6d4f361-5f80-4e15-8241-7c76afa5b95c)
+![image](https://github.com/TCFFan123/g2fminued/assets/107446530/c6d4f361-5f80-4e15-8241-7c76afa5b95c)
 
 ## Table of Contents
 - [Preview](#preview)
 - [Supported types of files](#supported-types-of-files)
-- [Download](download-grubfm-here.)
+- [Download](download-g2fm-here.)
 - [Build](#build)
 - [Boot](#boot)
 - [Source code](#source-code)
@@ -32,34 +32,34 @@
 | Linux/Multiboot Kernel |    Supported    |    Supported     |     Supported      |
 | EFI Application |    Not supported    |    Supported     |     Supported      |
 
-## Download GrubFM - CONTINUED [here. ](https://github.com/TCFFan123/g2fm-continued/releases)
+## Download g2fm - CONTINUED [here. ](https://github.com/TCFFan123/g2fminued/releases)
 
 
 ## Build
 	git clone https://github.com/TCFFan123/g2fm-continued.git
-	cd g2fm-continued.git
+	cd g2fminued.git
 	./update_grub.sh
 	./build.sh
 ## Boot 
-### It is recommended to use grubfm-multiarch ISO.
+### It is recommended to use g2fm-multiarch ISO.
 ### i386-pc 
-DO NOT boot grubfm.iso with memdisk!  
+DO NOT boot g2fm.iso with memdisk!  
 #### GRUB4DOS 
-	map --mem /grubfm-cont.iso (0xff)
+	map --mem /g2fm.iso (0xff)
 	map --hook
 	chainloader (0xff)
 #### GRUB 2
 	linux /loadfm  
-	initrd /grubfm-cont.iso  
+	initrd /g2fm.iso  
 ### x86_64-efi
 
 #### GRUB 2 
 
-	chainloader /grubfm-contx64.efi
+	chainloader /g2fmx64.efi
 #### rEFInd 
-	loader /grubfm-contx64.efi
+	loader /g2fmx64.efi
 #### Systemd-boot 
-	efi /grubfm-contx64.efi
+	efi /g2fmx64.efi
 
  
 ## Source code 
