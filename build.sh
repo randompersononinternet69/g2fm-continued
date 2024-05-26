@@ -255,8 +255,8 @@ dd if=/dev/zero of=build/efi.img bs=1M count=16
 mkfs.vfat build/efi.img
 mmd -i build/efi.img ::EFI
 mmd -i build/efi.img ::EFI/BOOT
-mcopy -i build/efi.img grubfmx64.efi ::EFI/BOOT/BOOTX64.EFI
-mcopy -i build/efi.img grubfmia32.efi ::EFI/BOOT/BOOTIA32.EFI
-xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efi.img -no-emul-boot -o grubfm_multiarch.iso build
+mcopy -i build/efi.img g2fmx64.efi ::EFI/BOOT/BOOTX64.EFI
+mcopy -i build/efi.img g2fmia32.efi ::EFI/BOOT/BOOTIA32.EFI
+xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efi.img -no-emul-boot -o g2fm_multiarch.iso build
 
 rm -r build
