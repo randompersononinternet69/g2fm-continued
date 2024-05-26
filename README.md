@@ -6,7 +6,8 @@
 # Grub2 File Manager - CONTINUED
 ![image](https://github.com/TCFFan123/g2fm-continued/assets/107446530/c6d4f361-5f80-4e15-8241-7c76afa5b95c)
 Star if you like it!
-**NEW!** Wiki is here! https://github.com/TCFFan123/g2fm-continued/wiki
+**NEW!**
+Wiki is here! https://github.com/TCFFan123/g2fm-continued/wiki
 ## Table of Contents
 - [Preview](#preview)
 - [Supported types of files](#supported-types-of-files)
