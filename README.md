@@ -41,7 +41,7 @@ Wiki is here! https://github.com/TCFFan123/g2fm-continued/wiki
 
 ## Build
 	git clone https://github.com/TCFFan123/g2fm-continued.git
-	cd g2fminued.git
+	cd g2fm-continued
 	./update_grub.sh
 	./build.sh
 ## Boot 
