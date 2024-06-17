@@ -49,7 +49,7 @@ function to_win_ver {
     set winver="Windows 8.1";
   elif [ "${1}" = "10.0" ];
   then
-    set winver="Windows 10";
+    set winver="Windows 10/11";
   else
     set winver="Windows NT ${1}";
   fi;
@@ -80,7 +80,7 @@ do
   dev_info "${device}";
   if [ -f "(${device})/boot/grub/external_menu.cfg" ];
   then
-    menuentry $"Load External Menu on (${device}) ${info}" "${device}" --class cfg {
+    menuentry $"Load external_menu.cfg on (${device}) ${info}" "${device}" --class cfg {
       if [ -f "${theme_std}" ];
       then
         export theme=${theme_std};
