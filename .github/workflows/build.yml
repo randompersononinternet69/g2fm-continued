@@ -32,4 +32,4 @@ jobs:
         files: |
          
           grubfm-en_US.7z
-          grubfm_multiarch.iso
+          g2fm_multiarch.iso
