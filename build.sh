@@ -241,7 +241,7 @@ mkdir build/boot/grubfm/i386-pc
 modlist="$(cat arch/legacy/insmod.lst) $(cat arch/legacy/optional.lst)"
 for modules in $modlist
 do
-    echo "$(CYAN)copying ${modules}.mod"
+    echo "${CYAN}copying ${modules}.mod"
     cp grub/i386-pc/${modules}.mod build/boot/grubfm/i386-pc/
 done
 cp arch/legacy/insmod.lst build/boot/grubfm/
