@@ -14,6 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
 clear
+export gfxmode=auto;
+export gfxpayload=keep;
+terminal_output gfxterm;
 echo Starting G2FM beta...
 export pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
@@ -70,9 +73,6 @@ export secondary_locale_dir=${prefix}/locale/fm;
 source ${prefix}/lang.sh;
 
 export grub_disable_esc="1";
-export gfxmode=auto;
-export gfxpayload=keep;
-terminal_output gfxterm;
 export color_normal=white/black;
 export color_highlight=black/white;
 

@@ -20,7 +20,7 @@ do
     cp g2fm_multiarch.iso
     cp loadfm releases/
     cd releases
-    7z a ../grubfm-${lang}.7z *
+    7z a ../g2fm-${lang}.7z *
     cd ..
     rm -r releases
 done
