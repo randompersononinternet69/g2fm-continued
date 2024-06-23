@@ -155,7 +155,7 @@ rm -r build/boot/grubfm/x86_64-efi
 # rm build/boot/grubfm/*.efi
 rm build/boot/grubfm/*.xz
 modules=$(cat arch/x64/builtin.lst)
-./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o grubfmx64.efi -O x86_64-efi $modules
+./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o g2fmx64.efi -O x86_64-efi $modules
 rm build/memdisk.xz
 
 echo "i386-efi"
@@ -174,7 +174,7 @@ rm -r build/boot/grubfm/i386-efi
 # rm build/boot/grubfm/*.efi
 rm build/boot/grubfm/*.xz
 modules=$(cat arch/ia32/builtin.lst)
-./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o grubfmia32.efi -O i386-efi $modules
+./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o g2fmia32.efi -O i386-efi $modules
 rm build/memdisk.xz
 
 echo "arm64-efi"
