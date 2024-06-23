@@ -31,5 +31,12 @@ jobs:
         title: "Beta build"
         files: |
          
-          grubfm-en_US.7z
+          g2fm-en_US.7z
           g2fm_multiarch.iso
+          g2fmia32.efi
+          g2fmx64.efi
+          g2fm_multiarch.iso
+          grubfm.elf
+          grubfm.iso
+          grubfmaa64.efi
+          grubfm_pc.iso
