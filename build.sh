@@ -157,11 +157,11 @@ case "$choice" in
 esac
 clear && echo ${RESET}
 echo "${YELLOW}x86_64-efi${RESET}"
-echo $(CYAN)
+echo ${CYAN}
 mkdir build/boot/grubfm/x86_64-efi
 for modules in $(cat arch/x64/optional.lst)
 do
-    echo "$(CYAN)copying ${modules}.mod"
+    echo "${CYAN}copying ${modules}.mod"
     cp grub/x86_64-efi/${modules}.mod build/boot/grubfm/x86_64-efi/
 done
 # cp arch/x64/*.efi build/boot/grubfm
@@ -180,7 +180,7 @@ echo "${YELLOW}i386-efi${RESET}"
 mkdir build/boot/grubfm/i386-efi
 for modules in $(cat arch/ia32/optional.lst)
 do
-    echo "$(CYAN)copying ${modules}.mod"
+    echo "${CYAN}copying ${modules}.mod"
     cp grub/i386-efi/${modules}.mod build/boot/grubfm/i386-efi/
 done
 # cp arch/ia32/*.efi build/boot/grubfm
@@ -199,7 +199,7 @@ echo "${YELLOW}arm64-efi${RESET}"
 mkdir build/boot/grubfm/arm64-efi
 for modules in $(cat arch/aa64/optional.lst)
 do
-    echo "$(CYAN)copying ${modules}.mod"
+    echo "${CYAN}copying ${modules}.mod"
     cp grub/arm64-efi/${modules}.mod build/boot/grubfm/arm64-efi/
 done
 # cp arch/aa64/*.efi build/boot/grubfm
@@ -218,7 +218,7 @@ echo "${YELLOW}i386-multiboot${RESET}"
 mkdir build/boot/grubfm/i386-multiboot
 for modules in $(cat arch/multiboot/optional.lst)
 do
-    echo "$(CYAN)copying ${modules}.mod"
+    echo "${CYAN}copying ${modules}.mod"
     cp grub/i386-multiboot/${modules}.mod build/boot/grubfm/i386-multiboot/
 done
 cp arch/multiboot/*.xz build/boot/grubfm/
