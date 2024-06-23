@@ -16,6 +16,8 @@ do
     echo "${i}" | ./build.sh
     cp grubfm.iso releases/
     cp grubfm*.efi releases/
+    cp g2fm*.efi
+    cp g2fm_multiarch.iso
     cp loadfm releases/
     cd releases
     7z a ../grubfm-${lang}.7z *
