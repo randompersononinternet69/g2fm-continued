@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
-
+echo Starting G2FM beta...
 export pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
 for module in ${modlist};
