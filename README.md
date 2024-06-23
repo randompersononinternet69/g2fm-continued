@@ -11,7 +11,7 @@ Star if you like it!
 
 Wiki is here! https://github.com/TCFFan123/g2fm-continued/wiki
 
-We're looking for more contributors! (I'm the only one so far who has made changes in this repo. GitHUb says there's 10 contributors but that's some weird issue with detaching a fork)
+We're looking for more contributors! (I'm the only one so far who has made changes in this repo. GitHub says there's 10 contributors but that's some weird issue with detaching a fork)
 
 If you find something wrong, report it in issues.
 
