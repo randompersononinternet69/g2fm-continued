@@ -10,10 +10,16 @@ Star if you like it!
 **NEW!**
 
 Wiki is here! https://github.com/TCFFan123/g2fm-continued/wiki
+
 We're looking for more contributors! (I'm the only one so far who has made changes in this repo.)
-If you find something wrong, report in issues.
+
+If you find something wrong, report it in issues.
+
 Think that something could change in g2fm? Create a pull request.
-Here's a guide on how to make a pull request: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?platform=windows
+
+Here's a guide on how to make a pull request, if you're new to GitHub: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-
+pull-request?platform=windows
+
 ## Table of Contents
 - [Preview](#preview)
 - [Supported types of files](#supported-types-of-files)
