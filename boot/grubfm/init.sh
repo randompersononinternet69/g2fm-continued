@@ -31,13 +31,23 @@ if [ $CPU64 = true -a $MBR = true ]; then set MBR64=true; fi
 if [ $CPU32 = true -a $MBR = true ]; then set MBR32=true; fi
 
 export MBR EFI MBR32 MBR64 EFI32 EFI64 CPU32 CPU64
-echo "GRUB2 file manager: in beta!"
+export grub_secureboot=$"Not available"
+
 if $MBR; then echo Legacy\\MBR\\CSM ; fi
 if $EFI64; then echo -n "UEFI64 - "; fi
 if $EFI32; then echo -n "UEFI32 - "; fi
 if $CPU32; then echo "32-bit CPU"; fi
 if $CPU64; then echo "64-bit CPU"; fi
 if [ "$grub_secureboot" = "Enabled" ]; then set color_normal=white/red; fi
+if [ "${grub_secureboot}" = "1" ];
+  then
+    export grub_secureboot=$"Enabled";
+    sbpolicy -i;
+  fi;
+  if [ "${grub_secureboot}" = "0" ];
+  then
+    export grub_secureboot=$"Disabled";
+echo Secure Boot: $grub_secureboot
 set color_normal=yellow/black
 echo Boot drive: $bootdev
 echo RAM: ${RAM} MB
@@ -48,7 +58,6 @@ do
   insmod ${module};
 done;
 export enable_progress_indicator=0;
-export grub_secureboot=$"Not available";
 if [ "${grub_platform}" = "efi" ];
 then
   search -s -f -q /efi/microsoft/boot/bootmgfw.efi;
