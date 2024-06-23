@@ -1,6 +1,6 @@
 if file --is-x86-linux "${grubfm_file}";
 then
-  menuentry $"Boot Linux Kernel" --class exe {
+  menuentry $"Boot Linux Kernel" --class gnu-linux {
     if [ "$grub_platform" = "efi" ];
     then
       linuxefi "${grubfm_file}";
@@ -27,7 +27,7 @@ fi;
 
 if file --is-x86-bios-bootsector "${grubfm_file}";
 then
-  menuentry $"Chainload BIOS Boot Sector" --class bin {
+  menuentry $"Chainload BIOS Boot Sector" --class exe {
     chainloader --force "${grubfm_file}";
   }
 fi;
