@@ -13,3 +13,17 @@ menu = img/hdd.sh
 title = "Boot Hard Drive Image (map)"
 icon = img
 enable = all
+
+[2]
+menu = iso/loop.sh
+condition = iso/loop_test.sh
+title = "Boot IMG (loopback.cfg)"
+icon = gnu-linux
+enable = all
+
+[3]
+menu = iso/grubcfg.sh
+condition = iso/grubcfg_test.sh
+title = "Boot IMG (grub.cfg)"
+icon = gnu-linux
+enable = all

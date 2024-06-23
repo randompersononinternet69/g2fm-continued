@@ -95,7 +95,7 @@ fi;
 
 if grubfm_get --hide;
 then
-  menuentry $"Display all files" --class search {
+  menuentry $"Display non-bootable files" --class search {
     grubfm_set --hide 0;
     configfile ${prefix}/settings.sh;
   }

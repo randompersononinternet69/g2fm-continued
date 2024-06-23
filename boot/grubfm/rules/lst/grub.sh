@@ -1,3 +1,4 @@
+# some commands will not work with this mode, since it translates menu.lst to grub.cfg
 source ${prefix}/func.sh;
 
 set root=${grubfm_device};

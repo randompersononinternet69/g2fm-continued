@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
 
+# auto swap function
 function auto_swap {
   if regexp '^hd[0-9a-zA-Z,]+$' $root;
   then
@@ -24,7 +25,7 @@ function auto_swap {
     fi;
   fi;
 }
-
+# windows version detection function
 function to_win_ver {
   if [ "${1}" = "5.0" ];
   then
@@ -89,6 +90,24 @@ do
       configfile (${root})/boot/grub/external_menu.cfg;
     }
   fi;
+  if [ -f "(${device})/boot/grub/grub.cfg" ];
+  then
+    menuentry $"Load grub.cfg on (${device}) ${info}" "${device}" --class cfg {
+      if [ -f "${theme_std}" ];
+      then
+        export theme=${theme_std};
+      fi;
+      set root="${2}";
+      configfile (${root})/boot/grub/grub.cfg;
+    }
+  fi; 
+# not tested, but it should work
+menuentry "Boot Ventoy on (${device}) ${info}" "${device}" {
+terminal_output console
+chainloader /EFI/BOOT/ventoyx64.efi
+}
+fi;
+fi;
   if [ "${grub_platform}" = "efi" ];
   then
     if [ -f "(${device})/efi/microsoft/boot/bootmgfw.efi" ];
@@ -155,6 +174,7 @@ do
       then
         echo "Skip NT ${sysver}";
       else
+        # this one will just load a specific installation of Windows, but via g2fm with NTBOOT
         menuentry $"Boot ${winver} on ${device} ${info}" "${device}" --class nt6 {
           set root="${2}";
           set lang=en_US;

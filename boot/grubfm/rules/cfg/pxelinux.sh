@@ -1,3 +1,4 @@
+# mirror of syslinux.sh
 source ${prefix}/func.sh;
 
 set root=${grubfm_device};

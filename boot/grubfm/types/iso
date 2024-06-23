@@ -10,13 +10,20 @@ icon = gnu-linux
 enable = all
 
 [1]
+menu = iso/grubcfg.sh
+condition = iso/grubcfg_test.sh
+title = "Boot ISO (grub.cfg)"
+icon = gnu-linux
+enable = all
+
+[2]
 menu = iso/e2b.sh
 condition = iso/e2b_test.sh
 title = "Boot ISO (partnew)"
 icon = gnu-linux
 enable = all
 
-[2]
+[3]
 menu = iso/map.sh
 title = "Boot ISO (map)"
 icon = iso

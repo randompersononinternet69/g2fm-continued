@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
-
+# the below script seems to fail
 if [ "$grub_platform" = "efi" ];
 then
   set netbootxyz=netboot.xyz.efi
