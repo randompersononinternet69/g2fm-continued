@@ -90,7 +90,7 @@ do
       configfile (${root})/boot/grub/external_menu.cfg;
     }
   fi;
-  if [ -f "(${device})/boot/grub/grub.cfg" ];
+if [ -f "(${device})/boot/grub/grub.cfg" ];
   then
     menuentry $"Load grub.cfg on (${device}) ${info}" "${device}" --class cfg {
       if [ -f "${theme_std}" ];
@@ -104,7 +104,7 @@ do
 # not tested, but it should work under EFI. Legacy BIOS will fail to load this though
 menuentry "Boot Ventoy on (${device}) ${info}" "${device}" {
 terminal_output console
-chainloader /EFI/BOOT/ventoyx64.efi
+chainloader (${root})/EFI/BOOT/ventoyx64.efi
 }
 fi;
 fi;
