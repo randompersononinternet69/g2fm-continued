@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+echo "---Welcome to the G2FM builder!---"
 echo -n Installing packages...
 sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso
 echo -n "Checking for gettext... "
@@ -39,8 +40,8 @@ then
     rm -r build
 fi
 mkdir build
-
-echo "common files"
+clear
+echo "Making a copy of /boot to /build"
 cp -r boot build/
 
 cp grub/locale/*.mo build/boot/grubfm/locale/
@@ -49,26 +50,36 @@ for po in */fm.po; do
   msgfmt ${po} -o ../build/boot/grubfm/locale/fm/${po%/*}.mo
 done
 cd ..
+clear
+# Color variables
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+RESET='\033[0m' # No Color
 
-echo "Language"
-echo "1. Simplified Chinese"
-echo "2. Traditional Chinese"
-echo "3. English (United States)"
-echo "4. Turkish"
-echo "5. German"
-echo "6. Vietnamese"
-echo "7. Russian"
-echo "8. Hebrew"
-echo "9. Spanish"
-echo "10. Polish"
-echo "11. Ukrainian"
-echo "12. French"
-echo "13. Danish"
-echo "14. Portuguese (Brazil)"
-echo "15. Arabic"
-echo "16. Korean"
-echo "17. Hungarian"
-read -p "Please make a choice: " choice
+echo -e "${CYAN}Select a language${RESET}"
+echo -e "${GREEN}1. ${YELLOW}Simplified Chinese${RESET}"
+echo -e "${GREEN}2. ${YELLOW}Traditional Chinese${RESET}"
+echo -e "${GREEN}3. ${YELLOW}English (United States)${RESET}"
+echo -e "${GREEN}4. ${YELLOW}Turkish${RESET}"
+echo -e "${GREEN}5. ${YELLOW}German${RESET}"
+echo -e "${GREEN}6. ${YELLOW}Vietnamese${RESET}"
+echo -e "${GREEN}7. ${YELLOW}Russian${RESET}"
+echo -e "${GREEN}8. ${YELLOW}Hebrew${RESET}"
+echo -e "${GREEN}9. ${YELLOW}Spanish${RESET}"
+echo -e "${GREEN}10. ${YELLOW}Polish${RESET}"
+echo -e "${GREEN}11. ${YELLOW}Ukrainian${RESET}"
+echo -e "${GREEN}12. ${YELLOW}French${RESET}"
+echo -e "${GREEN}13. ${YELLOW}Danish${RESET}"
+echo -e "${GREEN}14. ${YELLOW}Portuguese (Brazil)${RESET}"
+echo -e "${GREEN}15. ${YELLOW}Arabic${RESET}"
+echo -e "${GREEN}16. ${YELLOW}Korean${RESET}"
+echo -e "${GREEN}17. ${YELLOW}Hungarian${RESET}"
+
+read -p "$(echo -e "${CYAN}Select one: ${RESET}")" choice
+
 case "$choice" in
     2)
         echo "zh_TW"
@@ -134,11 +145,10 @@ case "$choice" in
         cp lang/hu_HU/lang.sh build/boot/grubfm/
         ;;
     *)
-        echo "zh_CN"
-        cp lang/zh_CN/lang.sh build/boot/grubfm/
+        echo "en_US"
         ;;
 esac
-
+clear
 echo "x86_64-efi"
 mkdir build/boot/grubfm/x86_64-efi
 for modules in $(cat arch/x64/optional.lst)
@@ -157,7 +167,7 @@ rm build/boot/grubfm/*.xz
 modules=$(cat arch/x64/builtin.lst)
 ./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o g2fmx64.efi -O x86_64-efi $modules
 rm build/memdisk.xz
-
+clear
 echo "i386-efi"
 mkdir build/boot/grubfm/i386-efi
 for modules in $(cat arch/ia32/optional.lst)
@@ -176,7 +186,7 @@ rm build/boot/grubfm/*.xz
 modules=$(cat arch/ia32/builtin.lst)
 ./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o g2fmia32.efi -O i386-efi $modules
 rm build/memdisk.xz
-
+clear
 echo "arm64-efi"
 mkdir build/boot/grubfm/arm64-efi
 for modules in $(cat arch/aa64/optional.lst)
