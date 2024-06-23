@@ -11,6 +11,6 @@ then
     set grubfm_test=0;
   fi;
 
-  source ${prefix}/rules/iso/loop_detect.sh;
+  source ${prefix}/rules/iso/grubcfg_detect.sh;
   loopback -d loop;
 fi;

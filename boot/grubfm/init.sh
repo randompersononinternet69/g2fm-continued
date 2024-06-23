@@ -18,6 +18,30 @@ export gfxmode=auto;
 export gfxpayload=keep;
 terminal_output gfxterm;
 echo Starting G2FM beta...
+# The following code is from agFM (a1ive's grub2 file manager) for Easy2Boot
+set CPU64=false; set CPU32=false; set MBR=false; set EFI=false; set EFI64=false; set EFI32=false; set MBR32=false; set MBR64=false
+set CPU32=true
+if cpuid -l; then set CPU64=true; fi
+if [ "${grub_cpu}" == "x86_64" ]; then set CPU64=true; fi
+if $CPU64 == true ; then set CPU32=false ; fi
+if [ "${grub_platform}" == "efi" ]; then set EFI=true; else set MBR=true; fi
+if [ "${grub_cpu}" == "x86_64" -a $EFI = true ]; then set EFI64=true; fi
+if [ "${grub_cpu}" == "i386" -a $EFI = true ]; then set EFI32=true; fi
+if [ $CPU64 = true -a $MBR = true ]; then set MBR64=true; fi
+if [ $CPU32 = true -a $MBR = true ]; then set MBR32=true; fi
+
+export MBR EFI MBR32 MBR64 EFI32 EFI64 CPU32 CPU64
+
+if $MBR; then echo Legacy\\MBR\\CSM ; fi
+if $EFI64; then echo -n "UEFI64 - "; fi
+if $EFI32; then echo -n "UEFI32 - "; fi
+if $CPU32; then echo "32-bit CPU"; fi
+if $CPU64; then echo "64-bit CPU"; fi
+if [ "$grub_secureboot" = "Enabled" ]; then set color_normal=white/red; fi
+echo Secure Boot: $grub_secureboot
+set color_normal=yellow/black
+echo Boot drive: $bootdev
+echo RAM: ${RAM} MB
 export pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
 for module in ${modlist};

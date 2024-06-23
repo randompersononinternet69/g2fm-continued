@@ -21,6 +21,7 @@ Here's a guide on how to make a pull request, if you're new to GitHub: https://d
 
 ## Table of Contents
 - [Preview](#preview)
+- [Supported architectures](#)
 - [Supported types of files](#supported-types-of-files)
 - [Download](download-g2fm-here.)
 - [Build](#build)
@@ -30,6 +31,8 @@ Here's a guide on how to make a pull request, if you're new to GitHub: https://d
 - [Related projects](#related-projects)
 ## Preview
 ![](https://i.imgur.com/zgz3Xeb.png)
+## Supported architectures
+ARM64, x86, x86_64.
 ## Supported types of files
 
 | Type                                                         | i386-pc | i386-efi | x86_64-efi |
@@ -56,17 +59,17 @@ Here's a guide on how to make a pull request, if you're new to GitHub: https://d
 ## Boot 
 ### It is recommended to use g2fm-multiarch ISO.
 ### i386-pc 
-DO NOT boot g2fm.iso with memdisk!  
-#### GRUB4DOS 
+**DO NOT boot g2fm.iso with memdisk!**  
+#### GRUB4DOS / GRUB Legacy
 	map --mem /g2fm.iso (0xff)
 	map --hook
 	chainloader (0xff)
-#### GRUB 2
+#### GRUB2
 	linux /loadfm  
 	initrd /g2fm.iso  
 ### x86_64-efi
 
-#### GRUB 2 
+#### GRUB2
 
 	chainloader /g2fmx64.efi
 #### rEFInd 
