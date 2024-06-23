@@ -38,16 +38,6 @@ if $EFI64; then echo -n "UEFI64 - "; fi
 if $EFI32; then echo -n "UEFI32 - "; fi
 if $CPU32; then echo "32-bit CPU"; fi
 if $CPU64; then echo "64-bit CPU"; fi
-if [ "$grub_secureboot" = "Enabled" ]; then set color_normal=white/red; fi
-if [ "${grub_secureboot}" = "1" ];
-  then
-    export grub_secureboot=$"Enabled";
-    sbpolicy -i;
-  fi;
-  if [ "${grub_secureboot}" = "0" ];
-  then
-    export grub_secureboot=$"Disabled";
-echo Secure Boot: $grub_secureboot
 set color_normal=yellow/black
 echo Boot drive: $bootdev
 echo RAM: ${RAM} MB
