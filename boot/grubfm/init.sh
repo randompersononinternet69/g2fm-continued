@@ -13,6 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
+clear
 echo Starting G2FM beta...
 export pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
@@ -47,6 +48,7 @@ then
   fi;
   # enable mouse/touchpad
   # terminal_input --append mouse;
+echo Secure boot is $grub_secureboot
 else
   search -s -f -q /fmldr;
 fi;

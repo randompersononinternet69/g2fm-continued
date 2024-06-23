@@ -101,7 +101,7 @@ do
       configfile (${root})/boot/grub/grub.cfg;
     }
   fi; 
-# not tested, but it should work
+# not tested, but it should work under EFI. Legacy BIOS will fail to load this though
 menuentry "Boot Ventoy on (${device}) ${info}" "${device}" {
 terminal_output console
 chainloader /EFI/BOOT/ventoyx64.efi
