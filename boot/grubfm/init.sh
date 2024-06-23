@@ -31,14 +31,13 @@ if [ $CPU64 = true -a $MBR = true ]; then set MBR64=true; fi
 if [ $CPU32 = true -a $MBR = true ]; then set MBR32=true; fi
 
 export MBR EFI MBR32 MBR64 EFI32 EFI64 CPU32 CPU64
-
+echo "GRUB2 file manager: in beta!"
 if $MBR; then echo Legacy\\MBR\\CSM ; fi
 if $EFI64; then echo -n "UEFI64 - "; fi
 if $EFI32; then echo -n "UEFI32 - "; fi
 if $CPU32; then echo "32-bit CPU"; fi
 if $CPU64; then echo "64-bit CPU"; fi
 if [ "$grub_secureboot" = "Enabled" ]; then set color_normal=white/red; fi
-echo Secure Boot: $grub_secureboot
 set color_normal=yellow/black
 echo Boot drive: $bootdev
 echo RAM: ${RAM} MB
