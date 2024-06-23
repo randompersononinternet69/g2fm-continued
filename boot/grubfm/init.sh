@@ -32,8 +32,8 @@ if [ $CPU32 = true -a $MBR = true ]; then set MBR32=true; fi
 
 export MBR EFI MBR32 MBR64 EFI32 EFI64 CPU32 CPU64
 export grub_secureboot=$"Not available"
-stat -r -q -s RAM;
-export RAM;
+stat -r -q -s RAM
+export RAM
 set color_normal=yellow/black
 if $MBR; then echo Legacy\\MBR\\CSM ; fi
 if $EFI64; then echo -n "UEFI64 - "; fi
