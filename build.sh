@@ -1,36 +1,36 @@
 #!/usr/bin/env sh
 echo -n Installing packages...
 sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso
-echo -n "checking for gettext ... "
+echo -n "Checking for gettext... "
 if [ -e "$(which msgfmt)" ]
 then
     echo "ok"
 else
-    echo "not found\nPlease install gettext."
+    echo "Not found\nPlease install gettext."
     exit
 fi
-echo -n "checking for xorriso ... "
+echo -n "Checking for xorriso... "
 if [ -e "$(which xorriso)" ]
 then
     echo "ok"
 else
-    echo "not found\nPlease install xorriso."
+    echo "Not found\nPlease install xorriso."
     exit
 fi
-#echo -n "checking for grub ... "
-#if [ -e "$(which grub-mkimage)" ]
-#then
-#    echo "ok"
-#else
-#    echo "not found\nPlease install grub."
-#    exit
-#fi
-echo -n "checking for mtools ... "
+echo -n "Checking for grub... "
+if [ -e "$(which grub-mkimage)" ]
+then
+    echo "ok"
+else
+    echo "Not found\nPlease install grub."
+    exit
+fi
+echo -n "Checking for mtools... "
 if [ -e "$(which mtools)" ]
 then
     echo "ok"
 else
-    echo "not found\nPlease install mtools."
+    echo "Not found\nPlease install mtools."
     exit
 fi
 
