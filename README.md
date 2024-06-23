@@ -17,8 +17,7 @@ If you find something wrong, report it in issues.
 
 Think that something could change in g2fm? Create a pull request.
 
-Here's a guide on how to make a pull request, if you're new to GitHub: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-
-pull-request?platform=windows
+Here's a guide on how to make a pull request, if you're new to GitHub: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?platform=windows
 
 ## Table of Contents
 - [Preview](#preview)
