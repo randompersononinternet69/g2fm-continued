@@ -131,4 +131,7 @@ menuentry $"Enable serial terminal" --class ms-dos {
   terminal_output --append serial;
 }
 
+menuentry "Test mode" --class settings {
+  lua ${PREFIX}/testmode.lua
+
 source ${prefix}/global.sh;
