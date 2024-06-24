@@ -29,6 +29,7 @@ Here's a guide on how to make a pull request, if you're new to GitHub: https://d
 - [Source code](#source-code)
 - [USB Installers](#usb-installers)
 - [Related projects](#related-projects)
+- [The original](#the-original)
 ## Preview
 ![](https://i.imgur.com/zgz3Xeb.png)
 ## Supported architectures
