@@ -133,5 +133,5 @@ menuentry $"Enable serial terminal" --class ms-dos {
 
 menuentry "Test mode" --class settings {
   lua ${PREFIX}/testmode.lua
-
+}
 source ${prefix}/global.sh;
