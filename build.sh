@@ -256,7 +256,7 @@ rm -r build/boot
 cat grub/i386-pc/cdboot.img build/core.img > build/fmldr
 rm build/core.img
 touch build/ventoy.dat
-echo "{$YELLOW}Loopback support{$RESET}
+echo "{$YELLOW}Loopback support{$RESET}"
 mkdir boot/grub
 cp loopback/loopback.cfg boot/grub/
 cp -R boot/grub build/boot/
@@ -284,7 +284,7 @@ mmd -i build/efi.img ::EFI
 mmd -i build/efi.img ::EFI/BOOT
 mcopy -i build/efi.img g2fmx64.efi ::EFI/BOOT/BOOTX64.EFI
 mcopy -i build/efi.img g2fmia32.efi ::EFI/BOOT/BOOTIA32.EFI
-echo "{$YELLOW}Loopback support{$RESET}
+echo "{$YELLOW}Loopback support{$RESET}"
 mkdir boot/grub
 cp loopback/loopback.cfg boot/grub/
 cp -R boot/grub build/boot/
