@@ -256,6 +256,10 @@ rm -r build/boot
 cat grub/i386-pc/cdboot.img build/core.img > build/fmldr
 rm build/core.img
 touch build/ventoy.dat
+echo "{$YELLOW}Loopback support{$RESET}
+mkdir boot/grub
+cp loopback/loopback.cfg boot/grub/
+cp -R boot/grub build/boot/
 xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -o grubfm_pc.iso build
 rm build/fmldr
 rm build/fm.loop
@@ -267,6 +271,10 @@ cat grub/i386-pc/cdboot.img build/core.img > build/fmldr
 rm build/core.img
 cp grubfm.elf build/
 touch build/ventoy.dat
+echo "{$YELLOW}Loopback support{$RESET}
+mkdir boot/grub
+cp loopback/loopback.cfg boot/grub/
+cp -R boot/grub build/boot/
 xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -o grubfm.iso build
 
 echo "${YELLOW}making efi.img using files in the EFI directory${RESET}"
@@ -276,6 +284,10 @@ mmd -i build/efi.img ::EFI
 mmd -i build/efi.img ::EFI/BOOT
 mcopy -i build/efi.img g2fmx64.efi ::EFI/BOOT/BOOTX64.EFI
 mcopy -i build/efi.img g2fmia32.efi ::EFI/BOOT/BOOTIA32.EFI
+echo "{$YELLOW}Loopback support{$RESET}
+mkdir boot/grub
+cp loopback/loopback.cfg boot/grub/
+cp -R boot/grub build/boot/
 xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efi.img -no-emul-boot -o g2fm_multiarch.iso build
 
 rm -r build
