@@ -380,6 +380,14 @@ function iso_detect {
     export src=knoppix;
     return;
   fi;
+  if [ -f (loop)/boot/isolinux/minirt24.gz ];
+  then
+    export linux_extra="bootfrom=/dev/*${grubfm_path}";
+    export icon=knoppix;
+    export distro="Damn Small Linux old";
+    export src=knoppix;
+    return;
+  fi;
   if [ -f (loop)/boot/kernel/kernel* -o -f (loop)/boot/kernel/kfreebsd.gz ];
   then
     export linux_extra="${grubfm_file}";
@@ -402,6 +410,7 @@ echo $"Detecting ISO type ...";
 iso_detect;
 if [ -n "${src}" ];
 then
+  echo found ${distro}
   menuentry $"Boot ${distro} From ISO" --class ${icon} {
     loopback -d loop;
     loopback loop "${grubfm_file}";
