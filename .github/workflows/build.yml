@@ -11,12 +11,6 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v1
-    - name: initialize
-      run: |
-        sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso
-
-    - name: update grub2
-      run: ./update_grub2.sh
 
     - name: build
       run: |
@@ -26,9 +20,9 @@ jobs:
       uses: marvinpinto/action-automatic-releases@latest
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "latest-beta"
+        automatic_release_tag: "v1.0.0-alpha"
         prerelease: true
-        title: "Beta build"
+        title: "Alpha build"
         files: |
          
           g2fm-en_US.7z
