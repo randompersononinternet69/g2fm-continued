@@ -10,6 +10,4 @@ test*.cer
 desktop.ini
 grub2-latest.tar.gz
 grub/*
-g2fm_multiarch.iso
-g2fmia32.efi
-g2fmx64.efi
+g2fm*
