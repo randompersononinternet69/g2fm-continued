@@ -29,7 +29,6 @@ if [ "${grub_cpu}" == "x86_64" -a $EFI = true ]; then set EFI64=true; fi
 if [ "${grub_cpu}" == "i386" -a $EFI = true ]; then set EFI32=true; fi
 if [ $CPU64 = true -a $MBR = true ]; then set MBR64=true; fi
 if [ $CPU32 = true -a $MBR = true ]; then set MBR32=true; fi
-
 export MBR EFI MBR32 MBR64 EFI32 EFI64 CPU32 CPU64
 export grub_secureboot=$"Not available"
 stat -r -q -s RAM
@@ -42,6 +41,10 @@ if $CPU32; then echo "32-bit CPU"; fi
 if $CPU64; then echo "64-bit CPU"; fi
 echo Boot drive: $bootdev
 echo RAM: ${RAM} MB
+# a random string of text is shown after the dash, for example: "v1.0.20-235ba555-c959-48b4-a26c-7520a0040e2a"
+echo -n "Version: v1.0.0a-"
+cat (${PREFIX})/ver.txt; fi
+echo
 export pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
 for module in ${modlist};

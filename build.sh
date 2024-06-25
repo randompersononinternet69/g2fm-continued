@@ -56,6 +56,7 @@ clear
 echo -n ${RESET}
 clear
 echo "${CYAN}---Making a copy of /boot to /build---"
+cat /proc/sys/kernel/random/uuid >boot/grubfm/ver.txt
 cp -r boot build/
 
 cp grub/locale/*.mo build/boot/grubfm/locale/
