@@ -84,7 +84,7 @@ GRUB2: https://github.com/tcffan123/grub
 
 ## USB Installers
 
-* None yet. If you want to have one featured here, please open an pull request.
+* None yet. If you want to have one featured here, please open an issue.
 
 ## Related projects
 
