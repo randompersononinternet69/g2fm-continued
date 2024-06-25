@@ -132,6 +132,6 @@ menuentry $"Enable serial terminal" --class ms-dos {
 }
 
 menuentry "Test mode" --class settings {
-  lua ${PREFIX}/testmode.lua
+  lua (memdisk)/boot/grubfm/testmode.lua
 }
 source ${prefix}/global.sh;
