@@ -1,6 +1,6 @@
 ---
 name: Major bug
-about: Multiple things broke, or a major part of the code broke.
+about: Multiple things broke, or a critical part of G2FM broke.
 title: "[MAJOR BUG!] "
 labels: Major bug
 assignees: ''
