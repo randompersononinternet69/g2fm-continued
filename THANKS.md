@@ -1,6 +1,4 @@
-g2fm (GRUB2-filemanager) would not be what it is today without the invaluable help of
-everybody who was kind enough to spend time testing it and reporting
-bugs.
+g2fm (GRUB2-filemanager) would not be what it is today without the invaluable help of everybody who was kind enough to spend time testing it and reporting bugs.
 
 g2fm (GRUB2-filemanager) is based on the following open source projects:
 

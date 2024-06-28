@@ -236,48 +236,6 @@ modules=$(cat arch/multiboot/builtin.lst)
 ./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/i386-multiboot -p "(memdisk)/boot/grubfm" -c arch/multiboot/config.cfg -o grubfm.elf -O i386-multiboot $modules
 rm build/memdisk.xz
 
-echo "${YELLOW}i386-pc${RESET}"
-builtin=$(cat arch/legacy/builtin.lst)
-mkdir build/boot/grubfm/i386-pc
-modlist="$(cat arch/legacy/insmod.lst) $(cat arch/legacy/optional.lst)"
-for modules in $modlist
-do
-    echo "${CYAN}copying ${modules}.mod"
-    cp grub/i386-pc/${modules}.mod build/boot/grubfm/i386-pc/
-done
-cp arch/legacy/insmod.lst build/boot/grubfm/
-cp arch/multiboot/*.xz build/boot/grubfm/
-cp arch/multiboot/memdisk build/boot/grubfm/
-cp arch/multiboot/grub.exe build/boot/grubfm/
-cd build
-find ./boot | cpio -o -H newc | xz -9 -e > ./fm.loop
-cd ..
-rm -r build/boot
-./grub/grub-mkimage -d ./grub/i386-pc -p "(memdisk)/boot/grubfm" -c arch/legacy/config.cfg -o ./build/core.img -O i386-pc $builtin
-cat grub/i386-pc/cdboot.img build/core.img > build/fmldr
-rm build/core.img
-touch build/ventoy.dat
-echo "{$YELLOW}Loopback support{$RESET}"
-mkdir boot/grub
-cp loopback/loopback.cfg boot/grub/
-cp -R boot/grub build/boot/
-xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -o grubfm_pc.iso build
-rm build/fmldr
-rm build/fm.loop
-
-echo "${YELLOW}i386-pc preloader${RESET}"
-builtin=$(cat arch/legacy/preloader.lst)
-./grub/grub-mkimage -d ./grub/i386-pc -p "(cd)/boot/grub" -c arch/legacy/preloader.cfg -o ./build/core.img -O i386-pc $builtin
-cat grub/i386-pc/cdboot.img build/core.img > build/fmldr
-rm build/core.img
-cp grubfm.elf build/
-touch build/ventoy.dat
-echo "{$YELLOW}Loopback support{$RESET}"
-mkdir boot/grub
-cp loopback/loopback.cfg boot/grub/
-cp -R boot/grub build/boot/
-xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -o grubfm.iso build
-
 echo "${YELLOW}making efi.img using files in the EFI directory${RESET}"
 dd if=/dev/zero of=build/efi.img bs=1M count=16
 mkfs.vfat build/efi.img
@@ -289,7 +247,7 @@ echo "{$YELLOW}Loopback support{$RESET}"
 mkdir boot/grub
 cp loopback/loopback.cfg boot/grub/
 cp -R boot/grub build/boot/
-xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efi.img -no-emul-boot -o g2fm_multiarch.iso build
+xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efi.img -no-emul-boot -o grubfm.iso build
 
 rm -r build
 echo ${CYAN}Done!
