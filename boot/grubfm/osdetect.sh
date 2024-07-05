@@ -92,7 +92,7 @@ do
   fi;
 if [ -f "(${device})/boot/grub/grub.cfg" ];
   then
-    menuentry $"Load grub.cfg on (${device}) ${info}" "${device}" --class cfg {
+    menuentry $"Load grub.cfg on ${device} ${info} ${device}" --class cfg {
       if [ -f "${theme_std}" ];
       then
         export theme=${theme_std};
@@ -102,7 +102,7 @@ if [ -f "(${device})/boot/grub/grub.cfg" ];
     }
   fi; 
 # not tested, but it should work under EFI. Legacy BIOS will fail to load this though
-menuentry "Boot Ventoy on (${device}) ${info}" "${device}" {
+menuentry "Boot Ventoy on ${device} ${info} ${device}" {
 terminal_output console
 chainloader (${root})/EFI/BOOT/ventoyx64.efi
 }
