@@ -247,6 +247,7 @@ echo "{$YELLOW}Loopback support{$RESET}"
 mkdir boot/grub
 cp loopback/loopback.cfg boot/grub/
 cp -R boot/grub build/boot/
+# i didn't even touch any "fmldr" related files and xorriso just fails???
 xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efi.img -no-emul-boot -o grubfm.iso build
 
 rm -r build
