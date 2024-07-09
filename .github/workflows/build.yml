@@ -34,3 +34,4 @@ jobs:
           grubfm.iso
           grubfmaa64.efi
           grubfm_pc.iso
+          samples.7z
