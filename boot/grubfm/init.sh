@@ -17,7 +17,7 @@ clear
 export gfxmode=auto;
 export gfxpayload=keep;
 terminal_output gfxterm;
-echo Starting G2FM beta...
+echo Starting G2FM alpha...
 # The following code is from agFM (a1ive's grub2 file manager) for Easy2Boot
 set CPU64=false; set CPU32=false; set MBR=false; set EFI=false; set EFI64=false; set EFI32=false; set MBR32=false; set MBR64=false
 set CPU32=true
@@ -43,7 +43,7 @@ echo Boot drive: $bootdev
 echo RAM: ${RAM} MB
 # a random string of text is shown after the dash, for example: "v1.0.20-235ba555-c959-48b4-a26c-7520a0040e2a"
 echo -n "Version: v1.0.0a-"
-cat ${PREFIX}/ver.txt; fi
+cat (memdisk)boot/grubfm/ver.txt; fi
 echo
 export pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
