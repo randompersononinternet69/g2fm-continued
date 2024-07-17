@@ -67,152 +67,97 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RESET='\033[0m'
 
-# Array of menu options
-options=(
-    "Simplified Chinese"
-    "Traditional Chinese"
-    "English (United States)"
-    "Turkish"
-    "German"
-    "Vietnamese"
-    "Russian"
-    "Hebrew"
-    "Spanish"
-    "Polish"
-    "Ukrainian"
-    "French"
-    "Danish"
-    "Portuguese (Brazil)"
-    "Arabic"
-    "Korean"
-    "Hungarian"
-)
-
-# Array of corresponding language codes and paths
-codes=(
-    "zh_CN"
-    "zh_TW"
-    "en_US"
-    "tr_TR"
-    "de_DE"
-    "vi_VN"
-    "ru_RU"
-    "he_IL"
-    "es_ES"
-    "pl_PL"
-    "uk_UA"
-    "fr_FR"
-    "da_DK"
-    "pt_BR"
-    "ar_SA"
-    "ko_KR"
-    "hu_HU"
-)
-
-if [ "$1" = "--old-style" ]; then
-    # Old style menu
-    echo "${CYAN}Select a language${RESET}"
-    for i in "${!options[@]}"; do
-        echo "${GREEN}$((i + 1)). ${YELLOW}${options[i]}${RESET}"
-    done
-
-    read -p "$(echo "${CYAN}Select one: ")" choice
-
-    case "$choice" in
-        1) echo "${GREEN}${codes[0]}"; cp lang/${codes[0]}/lang.sh build/boot/grubfm/ ;;
-        2) echo "${GREEN}${codes[1]}"; cp lang/${codes[1]}/lang.sh build/boot/grubfm/ ;;
-        3) echo "${GREEN}${codes[2]}"; ;;
-        4) echo "${GREEN}${codes[3]}"; cp lang/${codes[3]}/lang.sh build/boot/grubfm/ ;;
-        5) echo "${GREEN}${codes[4]}"; cp lang/${codes[4]}/lang.sh build/boot/grubfm/ ;;
-        6) echo "${GREEN}${codes[5]}"; cp lang/${codes[5]}/lang.sh build/boot/grubfm/ ;;
-        7) echo "${GREEN}${codes[6]}"; cp lang/${codes[6]}/lang.sh build/boot/grubfm/ ;;
-        8) echo "${GREEN}${codes[7]}"; cp lang/${codes[7]}/lang.sh build/boot/grubfm/ ;;
-        9) echo "${GREEN}${codes[8]}"; cp lang/${codes[8]}/lang.sh build/boot/grubfm/ ;;
-        10) echo "${GREEN}${codes[9]}"; cp lang/${codes[9]}/lang.sh build/boot/grubfm/ ;;
-        11) echo "${GREEN}${codes[10]}"; cp lang/${codes[10]}/lang.sh build/boot/grubfm/ ;;
-        12) echo "${GREEN}${codes[11]}"; cp lang/${codes[11]}/lang.sh build/boot/grubfm/ ;;
-        13) echo "${GREEN}${codes[12]}"; cp lang/${codes[12]}/lang.sh build/boot/grubfm/ ;;
-        14) echo "${GREEN}${codes[13]}"; cp lang/${codes[13]}/lang.sh build/boot/grubfm/ ;;
-        15) echo "${GREEN}${codes[14]}"; cp lang/${codes[14]}/lang.sh build/boot/grubfm/ ;;
-        16) echo "${GREEN}${codes[15]}"; cp lang/${codes[15]}/lang.sh build/boot/grubfm/ ;;
-        17) echo "${GREEN}${codes[16]}"; cp lang/${codes[16]}/lang.sh build/boot/grubfm/ ;;
-        *) echo "${GREEN}en_US" ;;
-    esac
-else
-    # New style menu
-    # Function to print the menu
-    print_menu() {
-        echo -e "${CYAN}Select a language${RESET}"
-        for i in "${!options[@]}"; do
-            if [ $i -eq $1 ]; then
-                echo -e "${GREEN}> ${YELLOW}${options[i]}${RESET}"
-            else
-                echo -e "  ${options[i]}"
-            fi
-        done
-    }
-
-    # Initial position
-    position=0
-
-    # Print the initial menu
-    clear
-    print_menu $position
-
-    # Read user input
-    while true; do
-        read -s -n 1 key
-        case $key in
-            $'\x1b')
-                read -s -n 1 key
-                if [ "$key" == "[" ]; then
-                    read -s -n 1 key
-                    case $key in
-                        A) # Up arrow
-                            ((position--))
-                            if [ $position -lt 0 ]; then
-                                position=$((${#options[@]} - 1))
-                            fi
-                            ;;
-                        B) # Down arrow
-                            ((position++))
-                            if [ $position -ge ${#options[@]} ]; then
-                                position=0
-                            fi
-                            ;;
-                    esac
-                fi
-                ;;
-            "") # Enter key
-                choice=$position
-                break
-                ;;
-        esac
-        clear
-        print_menu $position
-    done
-
-    # Handle the selected option
-    case "$choice" in
-        1) echo "${GREEN}${codes[1]}"; cp lang/${codes[1]}/lang.sh build/boot/grubfm/ ;;
-        2) echo "${GREEN}${codes[2]}"; ;;
-        3) echo "${GREEN}${codes[3]}"; cp lang/${codes[3]}/lang.sh build/boot/grubfm/ ;;
-        4) echo "${GREEN}${codes[4]}"; cp lang/${codes[4]}/lang.sh build/boot/grubfm/ ;;
-        5) echo "${GREEN}${codes[5]}"; cp lang/${codes[5]}/lang.sh build/boot/grubfm/ ;;
-        6) echo "${GREEN}${codes[6]}"; cp lang/${codes[6]}/lang.sh build/boot/grubfm/ ;;
-        7) echo "${GREEN}${codes[7]}"; cp lang/${codes[7]}/lang.sh build/boot/grubfm/ ;;
-        8) echo "${GREEN}${codes[8]}"; cp lang/${codes[8]}/lang.sh build/boot/grubfm/ ;;
-        9) echo "${GREEN}${codes[9]}"; cp lang/${codes[9]}/lang.sh build/boot/grubfm/ ;;
-        10) echo "${GREEN}${codes[10]}"; cp lang/${codes[10]}/lang.sh build/boot/grubfm/ ;;
-        11) echo "${GREEN}${codes[11]}"; cp lang/${codes[11]}/lang.sh build/boot/grubfm/ ;;
-        12) echo "${GREEN}${codes[12]}"; cp lang/${codes[12]}/lang.sh build/boot/grubfm/ ;;
-        13) echo "${GREEN}${codes[13]}"; cp lang/${codes[13]}/lang.sh build/boot/grubfm/ ;;
-        14) echo "${GREEN}${codes[14]}"; cp lang/${codes[14]}/lang.sh build/boot/grubfm/ ;;
-        15) echo "${GREEN}${codes[15]}"; cp lang/${codes[15]}/lang.sh build/boot/grubfm/ ;;
-        16) echo "${GREEN}${codes[16]}"; cp lang/${codes[16]}/lang.sh build/boot/grubfm/ ;;
-        0) echo "${GREEN}${codes[0]}"; cp lang/${codes[0]}/lang.sh build/boot/grubfm/ ;;
-    esac
-fi
+echo "Language"
+echo "1. Simplified Chinese"
+echo "2. Traditional Chinese"
+echo "3. English (United States)"
+echo "4. Turkish"
+echo "5. German"
+echo "6. Vietnamese"
+echo "7. Russian"
+echo "8. Hebrew"
+echo "9. Spanish"
+echo "10. Polish"
+echo "11. Ukrainian"
+echo "12. French"
+echo "13. Danish"
+echo "14. Portuguese (Brazil)"
+echo "15. Arabic"
+echo "16. Korean"
+echo "17. Hungarian"
+read -p "Please make a choice: " choice
+case "$choice" in
+    1)
+        echo "zh_CN"
+        cp lang/zh_TW/lang.sh build/boot/grubfm/
+        ;;
+    2)
+        echo "zh_TW"
+        cp lang/zh_TW/lang.sh build/boot/grubfm/
+        ;;
+    3)
+        echo "en_US"
+        ;;
+    4)
+        echo "tr_TR"
+        cp lang/tr_TR/lang.sh build/boot/grubfm/
+        ;;
+    5)
+        echo "de_DE"
+        cp lang/de_DE/lang.sh build/boot/grubfm/
+        ;;
+    6)
+        echo "vi_VN"
+        cp lang/vi_VN/lang.sh build/boot/grubfm/
+        ;;
+    7)
+        echo "ru_RU"
+        cp lang/ru_RU/lang.sh build/boot/grubfm/
+        ;;
+    8)
+        echo "he_IL"
+        cp lang/he_IL/lang.sh build/boot/grubfm/
+        ;;
+    9)
+        echo "es_ES"
+        cp lang/es_ES/lang.sh build/boot/grubfm/
+        ;;
+    10)
+        echo "pl_PL"
+        cp lang/pl_PL/lang.sh build/boot/grubfm/
+        ;;
+    11)
+        echo "uk_UA"
+        cp lang/uk_UA/lang.sh build/boot/grubfm/
+        ;;
+    12)
+        echo "fr_FR"
+        cp lang/fr_FR/lang.sh build/boot/grubfm/
+        ;;
+    13)
+        echo "da_DK"
+        cp lang/da_DK/lang.sh build/boot/grubfm/
+        ;;
+    14)
+        echo "pt_BR"
+        cp lang/pt_BR/lang.sh build/boot/grubfm/
+        ;;
+    15)
+        echo "ar_SA"
+        cp lang/ar_SA/lang.sh build/boot/grubfm/
+        ;;
+    16)
+        echo "ko_KR"
+        cp lang/ko_KR/lang.sh build/boot/grubfm/
+        ;;
+    17)
+        echo "hu_HU"
+        cp lang/hu_HU/lang.sh build/boot/grubfm/
+        ;;
+    *)
+        echo "en_US"
+        ;;
+esac
 clear && echo ${RESET}
 echo "------------------------------------"
 echo "${YELLOW}x86_64-efi${RESET}"
