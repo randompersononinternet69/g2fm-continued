@@ -12,7 +12,7 @@ do
         rm -r releases
     fi
     mkdir releases
-    i=`expr $i + 1`
+    i=`expr $i + 3`
     echo "${i}" | ./build.sh
     cp grubfm.iso releases/
     cp grubfm*.efi releases/
