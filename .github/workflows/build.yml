@@ -1,4 +1,4 @@
-name: release
+name: Build G2FM
 
 on:
   workflow_dispatch:
