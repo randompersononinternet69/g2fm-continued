@@ -1,6 +1,6 @@
 menuentry $"Android-x86 Live" --class android{
     set kcmdline="root=/dev/ram0";
-    linux $vmlinuz_img $kcmdline $android_selinux $android_hardware $linux_extra;
+    linux $vmlinuz_img $kcmdline $android_selinux $android_hardware $linux_extra $android_install;
     initrd $initrd_img;
 }
 if [ "${android_selinux}" = " " ]; then
