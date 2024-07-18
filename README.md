@@ -9,6 +9,9 @@
 
 Star if you like it!
 
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/TCFFan123/g2fm-continued/total?style=for-the-badge&labelColor=black&color=blue)
+![GitHub Tag](https://img.shields.io/github/v/tag/TCFFan123/g2fm-continued?include_prereleases&style=for-the-badge&labelColor=black&color=blue)
+
 **NEW!**
 
 Wiki is here! https://github.com/TCFFan123/g2fm-continued/wiki
