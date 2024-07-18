@@ -122,24 +122,24 @@ export theme_hw_board=${prefix}/themes/slack/hwinfo/board.txt;
 
 export theme=${theme_std};
 
-search --set=user -f -q /boot/grubfm/config;
-export user;
+search --set=user -f -q /boot/grubfm/config
+export user
+
+set default_choice=no
 if [ -n "${user}" ];
-then
-  grubfm_set -u "${user}";
-  source (${user})/boot/grubfm/config;
-fi;
+  then
+    echo "Do you want to load the config? (yes/no)"
+    read choice
+  fi
 
-export grubfm_lang="${lang}";
-
-if [ -z "${aioboot}" -a -z "${ventoy}" ];
+if [ "$choice" = "yes" ];
 then
-  source ${prefix}/pxeinit.sh;
-  net_detect;
-fi;
-if [ "${grub_netboot}" = "1" ];
-then
-  configfile ${prefix}/netboot.sh;
+  if [ -n "${user}" ];
+  then
+    grubfm_set -u "${user}"
+    source (${user})/boot/grubfm/config
+  fi
 else
-  grubfm;
-fi;
+  # Run the grubfm command here
+  grubfm
+fi
