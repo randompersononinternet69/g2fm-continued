@@ -58,7 +58,6 @@ ARM64, x86, x86_64.
 | Linux/Multiboot Kernel |    Supported    |    Supported     |     Supported      |
 | EFI Application |    Not supported    |    Supported     |     Supported      |
 
-## Download g2fm - CONTINUED [here.](https://github.com/TCFFan123/g2fm-continued/releases)
 
 ## Build
 
