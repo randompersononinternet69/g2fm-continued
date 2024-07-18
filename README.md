@@ -8,7 +8,7 @@
 Star if you like it!
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/TCFFan123/g2fm-continued/total?style=for-the-badge&labelColor=black&color=blue)
-![GitHub Tag](https://img.shields.io/github/v/tag/TCFFan123/g2fm-continued?include_prereleases&style=for-the-badge&labelColor=black&color=blue)
+![GitHub Tag](https://img.shields.io/github/v/tag/TCFFan123/g2fm-continued?include_prereleases&style=for-the-badge&labelColor=black)
 
 **NEW!**
 
@@ -16,9 +16,9 @@ Wiki is here! <https://github.com/TCFFan123/g2fm-continued/wiki>
 
 *We're looking for more contributors! (I'm the only one so far who has made changes in this repo. GitHub says there's 10 contributors but that's some weird issue with detaching a fork, I'm the only one who has made changes ever since the detach)*
 
-If you find something wrong, report it in issues.
+If you find something wrong or want to request a new feature, report it in issues.
 
-Think that something could change in g2fm? Create a pull request.
+Think that something could be changed/added in g2fm, and you know GRUB2? Create a pull request with the code for the feature.
 
 Here's a guide on how to make a pull request, if you're new to GitHub: <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?platform=windows>
 
@@ -57,7 +57,6 @@ ARM64, x86, x86_64.
 | NT5 WinPE |    Supported    |    Not supported     |     Not supported      |
 | Linux/Multiboot Kernel |    Supported    |    Supported     |     Supported      |
 | EFI Application |    Not supported    |    Supported     |     Supported      |
-
 
 ## Build
 
