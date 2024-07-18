@@ -29,7 +29,7 @@ menuentry $"Halt (H)" --class halt --hotkey "h" {
 if [ "$grub_platform" = "efi" ];
 then
 echo EFI detected
-  menuentry $"EFI Firmware Setup" --class mem {
+  menuentry $"UEFI Firmware Setup" --class mem {
     reset -f;
   }
 
