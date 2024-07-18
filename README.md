@@ -1,9 +1,8 @@
-# IN BETA
 
-# Grub2 File Manager - CONTINUED
+# GRUB2 FILE MANAGER 
+![Static Badge](https://img.shields.io/badge/IN_BETA!-red?style=for-the-badge)
 
-![image](https://github.com/TCFFan123/g2fm-continued/assets/107446530/c6d4f361-5f80-4e15-8241-7c76afa5b95c)
-**A grub2-based file manager that can boot about anything**
+It's GRUB2... but as a file manager with **LOTS** of features.
 
 Based on: [a1ive's grub2 file manager](https://github.com/a1ive/grub2-filemanager)
 
