@@ -8,7 +8,7 @@
 Star if you like it!
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/TCFFan123/g2fm-continued/total?style=for-the-badge&labelColor=black&color=blue)
-![GitHub Tag](https://img.shields.io/github/v/tag/TCFFan123/g2fm-continued?include_prereleases&style=for-the-badge&labelColor=black)
+![GitHub Release](https://img.shields.io/github/v/release/TCFFan123/g2fm-continued?style=for-the-badge&labelColor=black)
 
 **NEW!**
 
@@ -66,8 +66,6 @@ ARM64, x86, x86_64.
  ./build.sh
 
 ## Boot
-
-### It is recommended to use g2fm-multiarch ISO
 
 ### i386-pc
 
