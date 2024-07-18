@@ -14,7 +14,6 @@
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
 
-# not working
 function net_detect {
   export grub_netboot=0;
   if [ "${bootdev}" != "tftp" ];

@@ -128,7 +128,7 @@ export user
 set default_choice=no
 if [ -n "${user}" ];
   then
-    echo "Do you want to load the config? (yes/no)"
+    echo "Found a custom config at /boot/grubfm/config. Do you want to load the custom config? (yes/no)"
     read choice
   fi
 
@@ -141,5 +141,6 @@ then
   fi
 else
   # Run the grubfm command here
+  echo Your choice was no, skipping custom config load.
   grubfm
 fi
