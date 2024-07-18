@@ -8,7 +8,8 @@
 Star if you like it!
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/TCFFan123/g2fm-continued/total?style=for-the-badge&labelColor=black&color=blue)
-![GitHub Release](https://img.shields.io/github/v/release/TCFFan123/g2fm-continued?style=for-the-badge&labelColor=black)
+![GitHub Release](https://img.shields.io/github/v/release/TCFFan123/g2fm-continued?style=for-the-badge&labelColor=black&link=https%3A%2F%2Fgithub.com%2FTCFFan123%2Fg2fm-continued%2Freleases%2Ftag%2Fv1.0.0-beta)
+
 
 **NEW!**
 
