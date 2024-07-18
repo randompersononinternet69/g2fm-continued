@@ -5,16 +5,12 @@
 ![image](https://github.com/TCFFan123/g2fm-continued/assets/107446530/c6d4f361-5f80-4e15-8241-7c76afa5b95c)
 **A grub2-based file manager that can boot about anything**
 
+Based on: [a1ive's grub2 file manager](https://github.com/a1ive/grub2-filemanager)
+
 Star if you like it!
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/TCFFan123/g2fm-continued/total?style=for-the-badge&labelColor=black&color=blue)
 <img alt="GitHub Release" src="https://img.shields.io/github/v/release/TCFFan123/g2fm-continued?style=for-the-badge&labelColor=black&link=https%3A%2F%2Fgithub.com%2FTCFFan123%2Fg2fm-continued%2Freleases%2Ftag%2Fv1.0.0-beta">
-
-
-
-**NEW!**
-
-Wiki is here! <https://github.com/TCFFan123/g2fm-continued/wiki>
 
 *We're looking for more contributors! (I'm the only one so far who has made changes in this repo. GitHub says there's 10 contributors but that's some weird issue with detaching a fork, I'm the only one who has made changes ever since the detach)*
 
@@ -117,6 +113,3 @@ GRUB2: <https://github.com/tcffan123/grub>
 - [RUN](http://bbs.wuyou.net/forum.php?mod=viewthread&tid=191301)
 - [Ventoy](https://github.com/ventoy/Ventoy)
 
-## The original
-
-<https://github.com/a1ive/grub2-filemanager>
