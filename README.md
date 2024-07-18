@@ -1,4 +1,4 @@
-# IN ALPHA
+# IN BETA
 
 # Grub2 File Manager - CONTINUED
 
