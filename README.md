@@ -61,12 +61,12 @@ ARM64, x86, x86_64.
 | EFI Application |    Not supported    |    Supported     |     Supported      |
 
 ## Build
-
+```
  git clone <https://github.com/TCFFan123/g2fm-continued.git>
  cd g2fm-continued
  ./update_grub.sh
  ./build.sh
-
+```
 ## Boot
 
 ### i386-pc
@@ -74,30 +74,30 @@ ARM64, x86, x86_64.
 **DO NOT boot g2fm.iso with memdisk!**  
 
 #### GRUB4DOS / GRUB Legacy
-
+```
  map --mem /g2fm.iso (0xff)
  map --hook
  chainloader (0xff)
-
+```
 #### GRUB2
-
+```
  linux /loadfm  
  initrd /g2fm.iso  
-
+```
 ### x86_64-efi
 
 #### GRUB2
-
+```
  chainloader /g2fmx64.efi
-
+```
 #### rEFInd
-
+```
  loader /g2fmx64.efi
-
+```
 #### Systemd-boot
-
+```
  efi /g2fmx64.efi
-
+```
 ## Source code
 
 GRUB2: <https://github.com/tcffan123/grub>
