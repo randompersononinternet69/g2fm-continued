@@ -1,8 +1,16 @@
-
 # GRUB2 FILE MANAGER 
 ![Static Badge](https://img.shields.io/badge/IN_BETA!-red?style=for-the-badge)
 
 It's GRUB2... but as a file manager with **LOTS** of features.
+
+# Features
+* * *
+
+* A variety of operating systems are supported (Windows XP-11, Lot's of Linux distros, etc.)
+* Supports multiple architectures
+* Windows Install unattend support
+* Monitor hardware feature (press F1 while in any g2fm menu)
+* Very customizable
 
 Based on: [a1ive's grub2 file manager](https://github.com/a1ive/grub2-filemanager)
 
