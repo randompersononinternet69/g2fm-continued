@@ -4,7 +4,6 @@
 It's GRUB2... but as a file manager with **LOTS** of features.
 
 # Features
-* * *
 
 * A variety of operating systems are supported (Windows XP-11, Lot's of Linux distros, etc.)
 * Supports multiple architectures
