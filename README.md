@@ -8,7 +8,7 @@ It's GRUB2... but as a file manager with **LOTS** of features.
 
 * A variety of operating systems are supported (Windows XP-11, Lot's of Linux distros, etc.)
 * Supports multiple architectures
-* Windows Install unattend support
+* Windows Installer unattend support
 * Monitor hardware feature (press F1 while in any g2fm menu)
 * Very customizable
 
