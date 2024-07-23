@@ -5,26 +5,26 @@ then
   export theme=${theme_fm};
 fi;
 
-menuentry "Hardware Info " --hotkey f1 {
+hiddenentry " " --hotkey f1 {
   configfile ${prefix}/hwinfo.sh;
 }
 
-menuentry "File manager" --hotkey f2 {
+hiddenentry " " --hotkey f2 {
   grubfm_open "${grubfm_file}";
 }
 
-menuentry "Detect operating systems" --hotkey f3 {
+hiddenentry " " --hotkey f3 {
   configfile ${prefix}/osdetect.sh;
 }
 
-menuentry "Settings" --hotkey f4 {
+hiddenentry " " --hotkey f4 {
   configfile ${prefix}/settings.sh;
 }
 
-menuentry "Utitlites" --hotkey f5 {
+hiddenentry " " --hotkey f5 {
   configfile ${prefix}/util.sh;
 }
 
-menuentry "Power Options" --hotkey f6 {
+hiddenentry " " --hotkey f6 {
   configfile ${prefix}/power.sh;
 }
