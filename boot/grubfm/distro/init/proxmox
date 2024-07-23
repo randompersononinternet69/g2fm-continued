@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# This is a modifiable init file for proxmox, init is basically a startup process that busybox runs.
 # (C) 2009-2019 Proxmox Server Solutions GmbH <support@proxmox.com>
 
 export PATH=/sbin:/bin:/usr/bin:/usr/sbin
