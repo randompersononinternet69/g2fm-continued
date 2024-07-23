@@ -18,6 +18,7 @@ export gfxmode=auto;
 export gfxpayload=keep;
 terminal_output gfxterm;
 echo Starting G2FM alpha...
+echo " "
 # The following code is from agFM for Easy2Boot
 set CPU64=false; set CPU32=false; set MBR=false; set EFI=false; set EFI64=false; set EFI32=false; set MBR32=false; set MBR64=false
 set CPU32=true
