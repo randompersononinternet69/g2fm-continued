@@ -18,28 +18,28 @@ echo -n "${CYAN}Checking for gettext... "
 if [ "$(which msgfmt)" ]; then
     echo "${CYAN}ok"
 else
-    echo "${CYAN}Not found\nPlease install gettext."
+    echo "${CYAN}Not found\nPlease manually install gettext."
     exit
 fi
 echo -n "${CYAN}Checking for xorriso... "
 if [ "$(which xorriso)" ]; then
     echo "${CYAN}ok"
 else
-    echo "${CYAN}Not found\nPlease install xorriso."
+    echo "${CYAN}Not found\nPlease manually install xorriso."
     exit
 fi
 echo -n "${CYAN}Checking for grub... "
 if [ "$(which grub-mkimage)" ]; then
     echo "${CYAN}ok"
 else
-    echo "${CYAN}Not found\nPlease install grub."
+    echo "${CYAN}Not found\nPlease manually install grub."
     exit
 fi
 echo -n "${CYAN}Checking for mtools... "
 if [ "$(which mtools)" ]; then
     echo "${CYAN}ok"
 else
-    echo "${CYAN}Not found\nPlease install mtools."
+    echo "${CYAN}Not found\nPlease manually install mtools."
     exit
 fi
 
