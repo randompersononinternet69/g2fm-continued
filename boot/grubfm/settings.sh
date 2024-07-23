@@ -36,7 +36,7 @@ fi;
 
 submenu $"Resolution (R): ${mode_current}" --class screen --hotkey "r" {
   set lang=en_US;
-  terminal_output gfxterm;
+  terminal_output console;
   menuentry "AUTO DETECT (this is the one you probably want)" {
     set gfxmode=auto;
     terminal_output gfxterm;
