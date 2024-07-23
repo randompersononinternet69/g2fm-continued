@@ -5,13 +5,13 @@ display = 1
 
 [0]
 menu = wim/wimboot.sh
-title = "Boot NT6.x WIM (wimboot)"
+title = "Boot NT6.x or later WIM (wimboot)"
 icon = wim
 enable = all
 
 [1]
 menu = wim/ntboot.sh
-title = "Boot NT6.x WIM (NTBOOT)"
+title = "Boot NT6.x WIM or later (NTBOOT)"
 icon = nt6
 enable = all
 
