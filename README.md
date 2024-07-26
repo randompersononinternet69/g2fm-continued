@@ -4,7 +4,7 @@
 
 It's GRUB2... but as a file manager with **LOTS** of features.
 
-# Features
+## Features
 
 - A variety of operating systems are supported (Windows XP-11, lot's of Linux distros, etc.)
 - Supports multiple architectures
@@ -36,11 +36,10 @@ Star if you like it!
 - [Source code](#source-code)
 - [USB Installers](#usb-installers)
 - [Related projects](#related-projects)
-- [The original](#the-original)
 
 ## Preview
 
-![](https://i.imgur.com/zgz3Xeb.png)
+![Main menu](https://i.imgur.com/zgz3Xeb.png)
 
 ## Supported architectures
 
@@ -63,7 +62,7 @@ ARM64, x86, x86_64.
 
 ## Build
 
-```
+```bash
  git clone <https://github.com/TCFFan123/g2fm-continued.git>
  cd g2fm-continued
  ./update_grub.sh
@@ -78,7 +77,7 @@ ARM64, x86, x86_64.
 
 #### GRUB4DOS / GRUB Legacy
 
-```
+```bash
  map --mem /g2fm.iso (0xff)
  map --hook
  chainloader (0xff)
@@ -86,7 +85,7 @@ ARM64, x86, x86_64.
 
 #### GRUB2
 
-```
+```bash
  linux /loadfm
  initrd /g2fm.iso
 ```
@@ -95,19 +94,19 @@ ARM64, x86, x86_64.
 
 #### GRUB2
 
-```
+```bash
  chainloader /g2fmx64.efi
 ```
 
 #### rEFInd
 
-```
+```bash
  loader /g2fmx64.efi
 ```
 
 #### Systemd-boot
 
-```
+```bash
  efi /g2fmx64.efi
 ```
 
