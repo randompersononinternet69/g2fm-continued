@@ -1,15 +1,16 @@
-# GRUB2 FILE MANAGER 
+# GRUB2 FILE MANAGER
+
 ![Static Badge](https://img.shields.io/badge/IN_BETA!-red?style=for-the-badge)
 
 It's GRUB2... but as a file manager with **LOTS** of features.
 
 # Features
 
-* A variety of operating systems are supported (Windows XP-11, Lot's of Linux distros, etc.)
-* Supports multiple architectures
-* Windows Installer unattend support
-* Monitor hardware feature (press F1 while in any g2fm menu)
-* Very customizable
+- A variety of operating systems are supported (Windows XP-11, lot's of Linux distros, etc.)
+- Supports multiple architectures
+- Windows Installer unattend support
+- Monitor hardware feature (press F1 while in any g2fm menu)
+- Very customizable
 
 Based on: [a1ive's grub2 file manager](https://github.com/a1ive/grub2-filemanager)
 
@@ -19,16 +20,10 @@ Star if you like it!
 ![GitHub Release](https://img.shields.io/github/v/release/TCFFan123/g2fm-continued?display_name=release&style=for-the-badge&labelColor=black)
 ![GitHub Repo stars](https://img.shields.io/github/stars/TCFFan123/g2fm-continued?style=for-the-badge&logo=github&labelColor=black)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/TCFFan123/g2fm-continued/build.yml?style=for-the-badge&labelColor=black&color=blue)
-
-
-
-*We're looking for more contributors! (I'm the only one so far who has made changes in this repo. GitHub says there's 10 contributors but that's some weird issue with detaching a fork, I'm the only one who has made changes ever since the detach)*
-
-If you find something wrong or want to request a new feature, report it in issues.
-
-Think that something could be changed/added in g2fm, and you know GRUB2? Create a pull request with the code for the feature.
-
-Here's a guide on how to make a pull request, if you're new to GitHub: <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?platform=windows>
+> [!NOTE]
+> We're looking for more contributors! (I'm the only one so far who has made changes in this repo. GitHub says there's 10 contributors but that's some weird issue with detaching a fork, I'm the only one who has made changes ever since the detach)
+> If you find something wrong or want to request a new feature, report it in issues.
+> Think that something could be changed/added in g2fm, and you know GRUB2? Create a pull request with the code for the feature.
 
 ## Table of Contents
 
@@ -53,57 +48,69 @@ ARM64, x86, x86_64.
 
 ## Supported types of files
 
-| Type                                                         | i386-pc | i386-efi | x86_64-efi |
-| :----------------------------------------------------------- | :-----: | :------: | :--------: |
-| WinPE ISO |    Supported    |    Supported     |     Supported      |
-| Linux ISO |    Supported    |    Supported     |     Supported      |
-| Android ISO |    Supported    |    Supported     |     Supported      |
-| BSD ISO |    Supported    |    Not supported     |     Not supported      |
-| IMG (Disk Image) |    Supported    |    Supported     |     Supported      |
-| VHD |    Supported    |    Supported     |     Supported      |
-| WinPE WIM |    Supported    |    Supported     |     Supported      |
-| NT5 WinPE |    Supported    |    Not supported     |     Not supported      |
-| Linux/Multiboot Kernel |    Supported    |    Supported     |     Supported      |
-| EFI Application |    Not supported    |    Supported     |     Supported      |
+| Type                   |    i386-pc    |   i386-efi    |  x86_64-efi   |
+| :--------------------- | :-----------: | :-----------: | :-----------: |
+| WinPE ISO              |   Supported   |   Supported   |   Supported   |
+| Linux ISO              |   Supported   |   Supported   |   Supported   |
+| Android ISO            |   Supported   |   Supported   |   Supported   |
+| BSD ISO                |   Supported   | Not supported | Not supported |
+| IMG (Disk Image)       |   Supported   |   Supported   |   Supported   |
+| VHD                    |   Supported   |   Supported   |   Supported   |
+| WinPE WIM              |   Supported   |   Supported   |   Supported   |
+| NT5 WinPE              |   Supported   | Not supported | Not supported |
+| Linux/Multiboot Kernel |   Supported   |   Supported   |   Supported   |
+| EFI Application        | Not supported |   Supported   |   Supported   |
 
 ## Build
+
 ```
  git clone <https://github.com/TCFFan123/g2fm-continued.git>
  cd g2fm-continued
  ./update_grub.sh
  ./build.sh
 ```
+
 ## Boot
 
 ### i386-pc
 
-**DO NOT boot g2fm.iso with memdisk!**  
+**DO NOT boot g2fm.iso with memdisk!**
 
 #### GRUB4DOS / GRUB Legacy
+
 ```
  map --mem /g2fm.iso (0xff)
  map --hook
  chainloader (0xff)
 ```
+
 #### GRUB2
+
 ```
- linux /loadfm  
- initrd /g2fm.iso  
+ linux /loadfm
+ initrd /g2fm.iso
 ```
+
 ### x86_64-efi
 
 #### GRUB2
+
 ```
  chainloader /g2fmx64.efi
 ```
+
 #### rEFInd
+
 ```
  loader /g2fmx64.efi
 ```
+
 #### Systemd-boot
+
 ```
  efi /g2fmx64.efi
 ```
+
 ## Source code
 
 GRUB2: <https://github.com/tcffan123/grub>
