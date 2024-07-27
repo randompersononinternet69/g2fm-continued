@@ -57,7 +57,7 @@ fi;
 
 if [ "$grub_platform" = "efi" ];
 then
-  menuentry $"EFI Shell" --class ms-dos {
+  menuentry $"UEFI Shell" --class ms-dos {
     set lang=en_US;
     terminal_output console;
     shell;
