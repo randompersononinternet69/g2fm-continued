@@ -17,7 +17,7 @@ clear
 export gfxmode=auto;
 export gfxpayload=keep;
 terminal_output gfxterm;
-echo Starting G2FM alpha...
+echo Starting G2FM beta...
 echo " "
 # The following code is from agFM for Easy2Boot
 set CPU64=false; set CPU32=false; set MBR=false; set EFI=false; set EFI64=false; set EFI32=false; set MBR32=false; set MBR64=false
@@ -35,6 +35,7 @@ export grub_secureboot=$"Not available"
 stat -r -q -s RAM
 export RAM
 set color_normal=yellow/black
+echo "---SYSTEM INFORMATION---"
 if $MBR; then echo Legacy\\MBR\\CSM ; fi
 if $EFI64; then echo -n "UEFI64 - "; fi
 if $EFI32; then echo -n "UEFI32 - "; fi
