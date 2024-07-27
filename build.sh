@@ -222,7 +222,7 @@ rm build/boot/grubfm/*.xz
 modules=$(cat arch/aa64/builtin.lst)
 ./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/arm64-efi -p "(memdisk)/boot/grubfm" -c arch/aa64/config.cfg -o grubfmaa64.efi -O arm64-efi $modules
 rm build/memdisk.xz
-
+clear
 echo "------------------------------------"
 echo "${YELLOW}i386-multiboot${RESET}"
 echo "------------------------------------"
@@ -245,7 +245,7 @@ rm build/boot/grubfm/grub.exe
 modules=$(cat arch/multiboot/builtin.lst)
 ./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/i386-multiboot -p "(memdisk)/boot/grubfm" -c arch/multiboot/config.cfg -o grubfm.elf -O i386-multiboot $modules
 rm build/memdisk.xz
-
+clear
 echo "------------------------------------------------------------------------"
 echo "${YELLOW}making efi.img using files in the EFI directory${RESET}"
 echo "------------------------------------------------------------------------"
@@ -271,4 +271,4 @@ touch build/ventoy.dat
 xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efi.img -no-emul-boot -o grubfm.iso build
 
 rm -r build
-echo ${CYAN}Done!
+echo ${CYAN}Done! To perform tests, run ./test.sh (runs QEMU with 2 GB of RAM and 4 cores)
