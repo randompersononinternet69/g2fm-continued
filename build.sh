@@ -271,4 +271,4 @@ touch build/ventoy.dat
 xorriso -as mkisofs -l -R -hide-joliet boot.catalog -b fmldr -no-emul-boot -allow-lowercase -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e efi.img -no-emul-boot -o grubfm.iso build
 
 rm -r build
-echo ${CYAN}Done! To perform tests, run ./test.sh (runs QEMU with 2 GB of RAM and 4 cores)
+echo "${CYAN}Done! To perform tests, run ./test.sh, which runs QEMU with 2 GB of RAM and 4 cores."
