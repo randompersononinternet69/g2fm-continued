@@ -1,2 +1,10 @@
 [type]
 icon = sh
+boot = cfg/grub2.sh
+display = 1
+
+[0]
+menu = cfg/grub2.sh
+title = "Open as GRUB2 menu"
+icon = cfg
+enable = all
