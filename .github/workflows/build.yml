@@ -14,29 +14,14 @@ jobs:
       run: |
         ./release.sh
 
-    - name: GH Release
-
-      uses: softprops/action-gh-release@v2.0.8
+    - name: upload
+      uses: marvinpinto/action-automatic-releases@latest
       with:
-        # Note-worthy description of changes in release
-        body: "
-          > [!IMPORTANT]
-          > This is beta software. Bugs will be present.
-          > [!NOTE]
-          This is the latest version of g2fm, v1.0.0-beta. To download g2fm, select the correct binary.
-          "
-        # Path to load note-worthy description of changes in release from
-        body_path: # optional
-        # Gives the release a custom name. Defaults to tag name
-        name: G2FM v1.0.0 beta
-        # Gives a tag name. Defaults to github.GITHUB_REF
-        tag_name: v1.0.0-beta
-        # Creates a draft release. Defaults to false
-        draft: # optional
-        # Identify the release as a prerelease. Defaults to false
-        prerelease: # optional
-        # Newline-delimited list of path globs for asset files to upload
-        files: 
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "v1.0.0-beta"
+        prerelease: true
+        title: "Beta build"
+        files: |
           g2fm-en_US.7z
           g2fmia32.efi
           g2fmx64.efi
@@ -44,20 +29,3 @@ jobs:
           grubfm.iso
           grubfmaa64.efi
           samples.7z
-        # Fails if any of the `files` globs match nothing. Defaults to false
-        fail_on_unmatched_files: # optional
-        # Repository to make releases against, in <owner>/<repo> format
-        repository: # optional
-        # Authorized secret GitHub Personal Access Token. Defaults to github.token
-        token: # optional, default is ${{ github.token }}
-        # Commitish value that determines where the Git tag is created from. Can be any branch or commit SHA.
-        target_commitish: # optional
-        # If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored.
-        discussion_category_name: # optional
-        # Whether to automatically generate the name and body for this release. If name is specified, the specified name will be used; otherwise, a name will be automatically generated. If body is specified, the body will be pre-pended to the automatically generated notes.
-        generate_release_notes: true
-        # Append to existing body instead of overwriting it. Default is false.
-        append_body: # optional
-        # Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Can be `true`, `false`, or `legacy`. Uses GitHub api default if not provided
-        make_latest: true
-          
