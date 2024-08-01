@@ -13,6 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
+
 # the below script seems to fail
 if [ "$grub_platform" = "efi" ];
 then
@@ -26,8 +27,8 @@ fi;
 menuentry $"netboot.xyz" --class net {
   set lang=en_US;
   terminal_output console;
-  echo $"Please wait ...";
-  $chain (http,boot.netboot.xyz)/ipxe/$netbootxyz
+  echo $"Please wait...";
+  $chain (http://boot.netboot.xyz)/ipxe/$netbootxyz
 }
 
 source ${prefix}/global.sh;
