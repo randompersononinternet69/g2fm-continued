@@ -7,7 +7,7 @@ export iso_path="${grubfm_path}";
 export rootuuid;
 if [ -f "${theme_std}" ];
 then
-  export theme=${theme_std};
+  export theme=${prefix}/themes/slack/fm.txt;
 fi;
 export root=loop;
 configfile /boot/grub/grub.cfg;
