@@ -5,8 +5,9 @@ YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 RESET='\033[0m' # No Color
-echo -n "${CYAN}---Welcome to the G2FM builder!---"
-echo
+echo -----------------------------------------
+echo -n "${CYAN}Welcome to the G2FM builder!"
+echo -----------------------------------------
 echo
 echo -n "${CYAN}---Installing packages...---".
 sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso

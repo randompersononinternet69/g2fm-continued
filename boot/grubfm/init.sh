@@ -35,7 +35,9 @@ export grub_secureboot=$"Not available"
 stat -r -q -s RAM
 export RAM
 set color_normal=yellow/black
-echo "---SYSTEM INFORMATION---"
+echo "----------------------"
+echo "SYSTEM INFORMATION"
+echo "----------------------"
 if $MBR; then echo Legacy\\MBR\\CSM ; fi
 if $EFI64; then echo -n "UEFI64 - "; fi
 if $EFI32; then echo -n "UEFI32 - "; fi
@@ -142,7 +144,6 @@ then
     source (${user})/boot/grubfm/config
   fi
 else
-  # Run the grubfm command here
   echo Your choice was no, skipping custom config load.
   grubfm
 fi
