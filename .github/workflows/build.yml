@@ -19,7 +19,7 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "v1.0.0-beta"
-        prerelease: true
+        prerelease: false
         title: "Beta build"
         files: |
           g2fm-en_US.7z
