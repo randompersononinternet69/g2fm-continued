@@ -46,9 +46,9 @@ if $CPU64; then echo "64-bit CPU"; fi
 echo Boot drive: $bootdev
 echo RAM: ${RAM} MB
 # a random string of text is shown after the dash, for example: "v1.0.20-235ba555-c959-48b4-a26c-7520a0040e2a"
-echo -n "Version: v1.0.0a-"
+echo -n "Version: v1.0.0a";
+echo Build ID:
 cat (memdisk)/boot/grubfm/ver.txt; fi
-echo
 export pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
 for module in ${modlist};
