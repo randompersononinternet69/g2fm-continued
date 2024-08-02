@@ -14,21 +14,22 @@
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
 
-# the below script seems to fail
-if [ "$grub_platform" = "efi" ];
-then
-  set netbootxyz=netboot.xyz.efi
-  set chain=chainloader
+# Define the netbootxyz variable based on the grub_platform
+if [ "$grub_platform" = "efi" ]; then
+  netbootxyz="netboot.xyz.efi"
+  chain="chainloader"
 else
-  set netbootxyz=netboot.xyz.lkrn
-  set chain=linux16
-fi;
+  netbootxyz="netboot.xyz.lkrn"
+  chain="linux16"
+fi
 
+# Define the menu entry for netboot.xyz
 menuentry $"netboot.xyz" --class net {
-  set lang=en_US;
-  terminal_output console;
-  echo $"Please wait...";
+  set lang=en_US
+  terminal_output console
+  echo $"Please wait..."
   $chain (http://boot.netboot.xyz)/ipxe/$netbootxyz
 }
 
-source ${prefix}/global.sh;
+# Source the global configuration file
+source ${prefix}/global.sh

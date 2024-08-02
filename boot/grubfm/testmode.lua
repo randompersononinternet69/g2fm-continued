@@ -60,9 +60,9 @@ local sh_list = {
 
 local function search_sh (sh_table)
   local j = 0
-  for i, wim in ipairs (sh_list) do
+  for i, sh in ipairs (sh_list) do
     if (grub.file_exist (sh)) then
-      print ("found .sh file " .. sh")
+      print ("found .sh file" .. sh)
       j = j + 1
       sh_table[j] = sh
     end
