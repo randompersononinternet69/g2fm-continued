@@ -49,7 +49,7 @@ ARM64, x86, x86_64.
 
 | Type                   |    i386-pc    |   i386-efi    |  x86_64-efi   |
 | :--------------------- | :-----------: | :-----------: | :-----------: |
-| WinPE ISO              |   Supported   |   Supported   |   Supported   |
+| WinPE/Windows Install ISO              |   Supported   |   Supported   |   Supported   |
 | Linux ISO              |   Supported   |   Supported   |   Supported   |
 | Android ISO            |   Supported   |   Supported   |   Supported   |
 | BSD ISO                |   Supported   | Not supported | Not supported |
