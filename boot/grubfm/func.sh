@@ -47,6 +47,12 @@ function swap_hd01 {
   fi;
 }
 
+grubfm_view() {
+  loopback $grubfm_file
+  grubfm_set -r (loop)
+  grubfm "(loop)/"
+}
+
 unset grubfm_path;
 regexp --set=1:grubfm_path '(/.*)$' "${grubfm_file}";
 export grubfm_path;

@@ -1,4 +1,3 @@
-# this script allows access to the other menus in g2fm
 source ${prefix}/func.sh;
 if [ -f "${theme_fm}" ];
 then

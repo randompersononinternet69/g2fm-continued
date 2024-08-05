@@ -48,6 +48,10 @@ hiddenentry " " --hotkey f6 {
   configfile ${prefix}/power.sh;
 }
 
+hiddenentry " " --hotkey f7 {
+  configfile ${prefix}/init.sh;
+}
+
 if [ -n "${grubfm_current_path}" ];
 then
   hiddenentry " " --hotkey 0x02000066 {

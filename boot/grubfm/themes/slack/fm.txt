@@ -62,6 +62,11 @@ terminal-box: "term_bkg_*.png"
         + label {text = "[F6]" color = "#ffffff"}
         + image {file = "dock/logout.png"}
     }
+    + image {file = "dock/space.png"}
+    + vbox {
+        + label {text = "[F7]" color = "#ffffff"}
+        + image {file = "icons/reboot.png"}
+    }
 }
 
 + hbox {

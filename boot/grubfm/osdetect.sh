@@ -103,8 +103,21 @@ if [ -f "(${device})/boot/grub/grub.cfg" ];
   fi; 
 # not tested, but it should work under EFI. Legacy BIOS will fail to load this though
 menuentry "Boot Ventoy on ${device} ${info} ${device}" {
-terminal_output console
+  terminal_output console
 chainloader (${root})/EFI/BOOT/ventoyx64.efi
+}
+
+menuentry "Search for /boot/grubfm/config and load it" {
+  search --set=user -f -q /boot/grubfm/config
+  export user
+  if [ -n "${user}" ];
+  then
+    grubfm_set -u "${user}"
+    source (${user})/boot/grubfm/config
+    fi;
+  else
+    echo Did not find config.
+    configfile (memdisk)/boot/grubfm/osdetect.sh
 }
 fi;
 fi;
