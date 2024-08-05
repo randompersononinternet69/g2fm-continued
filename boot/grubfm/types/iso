@@ -43,7 +43,7 @@ icon = iso
 enable = all
 
 [6]
-menu = grubfm_view
+menu = generic/view.sh
 title = "View contents"
 icon = dir
 enable = all

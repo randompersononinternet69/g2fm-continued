@@ -29,7 +29,7 @@ icon = gnu-linux
 enable = all
 
 [4]
-menu = grubfm_view
+menu = generic/view.sh
 title = "View contents"
 icon = dir
 enable = all
