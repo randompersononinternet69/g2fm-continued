@@ -47,7 +47,7 @@ function swap_hd01 {
   fi;
 }
 
-grubfm_view() {
+grubfm_view {
   loopback $grubfm_file
   grubfm_set -r (loop)
   grubfm "(loop)/"
