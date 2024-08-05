@@ -41,3 +41,9 @@ menu = iso/mem.sh
 title = "Boot ISO (mem)"
 icon = iso
 enable = all
+
+[6]
+menu = grubfm_view
+title = "View contents"
+icon = dir
+enable = all

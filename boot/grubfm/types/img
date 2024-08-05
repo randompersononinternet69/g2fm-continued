@@ -27,3 +27,9 @@ condition = iso/grubcfg_test.sh
 title = "Boot IMG (grub.cfg)"
 icon = gnu-linux
 enable = all
+
+[4]
+menu = grubfm_view
+title = "View contents"
+icon = dir
+enable = all
