@@ -12,3 +12,4 @@ grub2-latest.tar.gz
 grub/*
 g2fm*
 boot/grubfm/ver.txt
+sync.sh
