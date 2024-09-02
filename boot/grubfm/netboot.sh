@@ -28,6 +28,7 @@ menuentry $"netboot.xyz" --class net {
   set lang=en_US
   terminal_output console
   echo $"Please wait..."
+  # GRUB2 can't seem to boot from a URL, need to make this working somehow
   $chain (http://boot.netboot.xyz)/ipxe/$netbootxyz
 }
 
