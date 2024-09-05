@@ -144,6 +144,5 @@ then
     source (${user})/boot/grubfm/config
   fi
 else
-  echo Your choice was no, skipping custom config load.
   grubfm
 fi

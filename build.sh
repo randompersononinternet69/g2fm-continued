@@ -1,4 +1,7 @@
-#!/usr/bin/env sh
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root (EFI builds won't work if not run as root)"
+  exit
+fi
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
