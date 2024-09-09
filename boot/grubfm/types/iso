@@ -5,21 +5,21 @@ display = 1
 [0]
 menu = iso/loop.sh
 condition = iso/loop_test.sh
-title = "Boot ISO (loopback.cfg)"
+title = "Boot ISO (loopback)"
 icon = gnu-linux
 enable = all
 
 [1]
 menu = iso/grubcfg.sh
 condition = iso/grubcfg_test.sh
-title = "Boot ISO (grub.cfg)"
+title = "Boot ISO (grub2 mode) [for grub2 ISO's without loopback.cfg]"
 icon = gnu-linux
 enable = all
 
 [2]
 menu = iso/grubcfg.sh
 condition = iso/grubcfg_test.sh
-title = "Boot ISO (menu.lst)"
+title = "Boot ISO (grub4dos/grub legacy mode)"
 icon = gnu-linux
 enable = all
 
