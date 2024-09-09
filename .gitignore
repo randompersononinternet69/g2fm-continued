@@ -13,3 +13,4 @@ grub/*
 g2fm*
 boot/grubfm/ver.txt
 sync.sh
+.vscode/settings.json
