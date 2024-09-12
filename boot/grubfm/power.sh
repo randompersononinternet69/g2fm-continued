@@ -29,12 +29,12 @@ menuentry $"Halt (H)" --class halt --hotkey "h" {
 if [ "$grub_platform" = "efi" ];
 then
 echo EFI detected
-  menuentry $"UEFI Firmware Setup" --class mem {
+  menuentry $"UEFI Firmware Setup" --class uefi {
     reset -f;
   }
 
 else
-  menuentry $"Halt (don't use APM)" --class uefi {
+  menuentry $"Halt (don't use APM)" --class halt {
     halt -n;
   }
 fi;
