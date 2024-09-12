@@ -103,9 +103,20 @@ if [ -f "(${device})/boot/grub/grub.cfg" ];
   fi; 
 
 # not tested, but it should work under EFI. Legacy BIOS will fail to load this though
-menuentry "Boot Ventoy on ${device} ${info} ${device}" {
+menuentry "Ventoy on ${device} ${info}" {
+  # set terminal output to console
   terminal_output console
-chainloader (${root})/EFI/BOOT/ventoyx64.efi
+  
+  # load Ventoy EFI bootloader for EFI systems
+  if [ "${grub_platform}" == "efi" ]; then
+    set root=${device}
+    echo Found ventoy EFI bootloader on ${device}
+    chainloader (${root})/EFI/BOOT/ventoyx64.efi
+  # load Ventoy BIOS bootloader for Legacy BIOS systems
+  else
+    echo Found ventoy BIOS bootloader on ${device}
+    chainloader (${root})/ventoy/core.img
+  fi
 }
 
 menuentry "Search for /boot/grubfm/config and load it" {
