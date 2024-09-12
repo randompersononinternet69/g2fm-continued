@@ -103,7 +103,7 @@ if [ -f "(${device})/boot/grub/grub.cfg" ];
   fi; 
 
 # not tested, but it should work under EFI. Legacy BIOS will fail to load this though
-menuentry "Ventoy on ${device} ${info}" {
+menuentry "Boot Ventoy" {
   # set terminal output to console
   terminal_output console
   
@@ -114,6 +114,7 @@ menuentry "Ventoy on ${device} ${info}" {
     chainloader (${root})/EFI/BOOT/ventoyx64.efi
   # load Ventoy BIOS bootloader for Legacy BIOS systems
   else
+    set root=${device}
     echo Found ventoy BIOS bootloader on ${device}
     chainloader (${root})/ventoy/core.img
   fi
