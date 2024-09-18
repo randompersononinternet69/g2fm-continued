@@ -36,3 +36,76 @@ else
         configfile ${prefix}/distro/andmenu.sh;
     }
 fi;
+if [ "${vulkan}" = " " ]; then
+    menuentry "[ ] Vulkan support (experimental)" --class settings{
+        export vulkan="VULKAN=1";
+        configfile ${prefix}/distro/andmenu.sh
+    }
+else
+    menuentry "[+] Vulkan support (experimental)" --class settings{
+        export vulkan=" ";
+        configfile ${prefix}/distro/andmenu.sh;
+    }
+fi;
+
+if [ "${setupwizard}" = " " ]; then
+    menuentry "[ ] No Setup Wizard" --class settings{
+        export setupwizard="SETUPWIZARD=0";
+        configfile ${prefix}/distro/andmenu.sh
+    }
+else
+    menuentry "[+] No Setup Wizard" --class settings{
+        export setupwizard=" ";
+        configfile ${prefix}/distro/andmenu.sh;
+    }
+fi;
+
+if [ "${hwaccel}" = " " ]; then
+    menuentry "[ ] No Hardware Acceleration" --class settings{
+        export hwaccel="nomodeset HWACCEL=0";
+        configfile ${prefix}/distro/andmenu.sh
+    }
+else
+    menuentry "[+] No Hardware Acceleration" --class settings{
+        export hwaccel=" ";
+        configfile ${prefix}/distro/andmenu.sh;
+    }
+fi;
+
+if [ "${acpi}" = " " ]; then
+    menuentry "[ ] No ACPI and no setup wizard" --class settings{
+        export acpi="acpi=off SETUPWIZARD=0";
+        configfile ${prefix}/distro/andmenu.sh
+    }
+else
+    menuentry "[+] No ACPI and no setup wizard" --class settings{
+        export acpi=" ";
+        configfile ${prefix}/distro/andmenu.sh;
+    }
+fi;
+
+if [ -s ($android)$kdir/install.img ]; then
+    if [ "${autoinstall}" = " " ]; then
+        menuentry "[ ] Auto Install to specified harddisk" --class settings{
+            export autoinstall="AUTO_INSTALL=0";
+            configfile ${prefix}/distro/andmenu.sh
+        }
+    else
+        menuentry "[+] Auto Install to specified harddisk" --class settings{
+            export autoinstall=" ";
+            configfile ${prefix}/distro/andmenu.sh;
+        }
+    fi;
+
+    if [ "${autoupdate}" = " " ]; then
+        menuentry "[ ] Auto Update" --class settings{
+            export autoupdate="AUTO_INSTALL=update";
+            configfile ${prefix}/distro/andmenu.sh
+        }
+    else
+        menuentry "[+] Auto Update" --class settings{
+            export autoupdate=" ";
+            configfile ${prefix}/distro/andmenu.sh;
+        }
+    fi;
+fi;

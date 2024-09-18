@@ -143,6 +143,7 @@ then
   fi
 else
   clear
+  echo init VGA buffer
   export gfxmode=auto;
   export gfxpayload=keep;
   terminal_output gfxterm

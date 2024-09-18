@@ -7,14 +7,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
 
-    - name: build
+    - name: Build
       run: |
         ./release.sh
 
-    - name: upload
+    - name: Upload
       uses: marvinpinto/action-automatic-releases@latest
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"

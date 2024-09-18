@@ -2,13 +2,12 @@ if [ "$EUID" -ne 0 ]
   then echo "Please run as root (EFI builds won't work if not run as root)"
   exit
 fi
-GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RESET='\033[0m' # No Color
-echo -----------------------------------------
-echo -n "${CYAN}Welcome to the G2FM builder!"
-echo -----------------------------------------
+echo "${CYAN}"-----------------------------------------
+echo -n ""${CYAN}"Welcome to the G2FM builder!"
+echo "${CYAN}"-----------------------------------------
 echo
 echo -n "${CYAN}---Installing packages...---".
 sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso
@@ -59,7 +58,7 @@ cp -r boot build/
 cp grub/locale/*.mo build/boot/grubfm/locale/
 cd lang
 for po in */fm.po; do
-  msgfmt ${po} -o ../build/boot/grubfm/locale/fm/${po%/*}.mo
+  msgfmt ${po} -o ../build/boot/grubfm/locale/fm/"${po%/*}".mo
 done
 cd ..
 clear
@@ -164,7 +163,7 @@ mkdir build/boot/grubfm/x86_64-efi
 for modules in $(cat arch/x64/optional.lst)
 do
     echo "${CYAN}copying ${modules}.mod"
-    cp grub/x86_64-efi/${modules}.mod build/boot/grubfm/x86_64-efi/
+    cp grub/x86_64-efi/"${modules}".mod build/boot/grubfm/x86_64-efi/
 done
 # cp arch/x64/*.efi build/boot/grubfm
 cp arch/x64/*.xz build/boot/grubfm
@@ -175,7 +174,7 @@ rm -r build/boot/grubfm/x86_64-efi
 # rm build/boot/grubfm/*.efi
 rm build/boot/grubfm/*.xz
 modules=$(cat arch/x64/builtin.lst)
-./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o g2fmx64.efi -O x86_64-efi $modules
+./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o g2fmx64.efi -O x86_64-efi $modules
 rm build/memdisk.xz
 clear
 echo "------------------------------------"
@@ -185,7 +184,7 @@ mkdir build/boot/grubfm/i386-efi
 for modules in $(cat arch/ia32/optional.lst)
 do
     echo "${CYAN}copying ${modules}.mod"
-    cp grub/i386-efi/${modules}.mod build/boot/grubfm/i386-efi/
+    cp grub/i386-efi/"${modules}".mod build/boot/grubfm/i386-efi/
 done
 # cp arch/ia32/*.efi build/boot/grubfm
 cp arch/ia32/*.xz build/boot/grubfm
@@ -196,7 +195,7 @@ rm -r build/boot/grubfm/i386-efi
 # rm build/boot/grubfm/*.efi
 rm build/boot/grubfm/*.xz
 modules=$(cat arch/ia32/builtin.lst)
-./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o g2fmia32.efi -O i386-efi $modules
+./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o g2fmia32.efi -O i386-efi $modules
 rm build/memdisk.xz
 clear
 echo "------------------------------------"
@@ -206,7 +205,7 @@ mkdir build/boot/grubfm/arm64-efi
 for modules in $(cat arch/aa64/optional.lst)
 do
     echo "${CYAN}copying ${modules}.mod"
-    cp grub/arm64-efi/${modules}.mod build/boot/grubfm/arm64-efi/
+    cp grub/arm64-efi/"${modules}".mod build/boot/grubfm/arm64-efi/
 done
 # cp arch/aa64/*.efi build/boot/grubfm
 cp arch/aa64/*.xz build/boot/grubfm
@@ -217,7 +216,7 @@ rm -r build/boot/grubfm/arm64-efi
 # rm build/boot/grubfm/*.efi
 rm build/boot/grubfm/*.xz
 modules=$(cat arch/aa64/builtin.lst)
-./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/arm64-efi -p "(memdisk)/boot/grubfm" -c arch/aa64/config.cfg -o grubfmaa64.efi -O arm64-efi $modules
+./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/arm64-efi -p "(memdisk)/boot/grubfm" -c arch/aa64/config.cfg -o grubfmaa64.efi -O arm64-efi $modules
 rm build/memdisk.xz
 clear
 echo "------------------------------------"
@@ -227,7 +226,7 @@ mkdir build/boot/grubfm/i386-multiboot
 for modules in $(cat arch/multiboot/optional.lst)
 do
     echo "${CYAN}copying ${modules}.mod"
-    cp grub/i386-multiboot/${modules}.mod build/boot/grubfm/i386-multiboot/
+    cp grub/i386-multiboot/"${modules}".mod build/boot/grubfm/i386-multiboot/
 done
 cp arch/multiboot/*.xz build/boot/grubfm/
 cp arch/multiboot/memdisk build/boot/grubfm/
@@ -240,7 +239,7 @@ rm build/boot/grubfm/*.xz
 rm build/boot/grubfm/memdisk
 rm build/boot/grubfm/grub.exe
 modules=$(cat arch/multiboot/builtin.lst)
-./grub/grub-mkimage -m ./build/memdisk.xz -d ./grub/i386-multiboot -p "(memdisk)/boot/grubfm" -c arch/multiboot/config.cfg -o grubfm.elf -O i386-multiboot $modules
+./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/i386-multiboot -p "(memdisk)/boot/grubfm" -c arch/multiboot/config.cfg -o grubfm.elf -O i386-multiboot $modules
 rm build/memdisk.xz
 clear
 echo "------------------------------------------------------------------------"
@@ -259,7 +258,7 @@ cp -R boot/grub build/boot/
 
 echo "i386-pc preloader"
 builtin=$(cat arch/legacy/preloader.lst)
-./grub/grub-mkimage -d ./grub/i386-pc -p "(cd)/boot/grub" -c arch/legacy/preloader.cfg -o ./build/core.img -O i386-pc $builtin
+./grub/grub-mkimage -v -d ./grub/i386-pc -p "(cd)/boot/grub" -c arch/legacy/preloader.cfg -o ./build/core.img -O i386-pc $builtin
 cat grub/i386-pc/cdboot.img build/core.img > build/fmldr
 rm build/core.img
 cp grubfm.elf build/

@@ -10,7 +10,7 @@ test*.cer
 desktop.ini
 grub2-latest.tar.gz
 grub/*
-g2fm*
+g2fm*.efi
 boot/grubfm/ver.txt
 sync.sh
 .vscode/settings.json
