@@ -31,6 +31,7 @@ local winpe_wim_list =
   "(loop)/KMPE/PE32W10.wim",
   "(loop)/KMPE/PE32W8.wim",
   "(loop)/KMPE/PE32W8NE.wim",
+  "(loop)/SSTR/strelec11x64Eng.wim",
   "(loop)/SSTR/strelec10x64Eng.wim",
   "(loop)/SSTR/strelec10Eng.wim",
   "(loop)/SSTR/strelec8Eng.wim",

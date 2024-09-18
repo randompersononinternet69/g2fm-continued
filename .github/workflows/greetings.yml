@@ -13,4 +13,4 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: "Hi there! Thank you for your first issue! **Please make sure your issue is labeled correctly.** He will usually respond at least 3:15 PM (when he has free time)"
-        pr-message: "Hi there, thanks for your first contribution! He will usually respond at least 3:15 PM (when he has free time). test"
+        pr-message: "Hi there, thanks for your first contribution! He will usually respond at least 3:15 PM (when he has free time)."

@@ -1,5 +1,5 @@
-set gfxmode=640x400;
-set gfxpayload=1024x768;
+set gfxmode=auto;
+set gfxpayload=keep;
 set theme=(loop)/boot/grub/pvetheme/theme.txt;
 terminal_output gfxterm;
 

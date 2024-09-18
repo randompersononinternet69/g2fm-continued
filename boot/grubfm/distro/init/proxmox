@@ -1,22 +1,24 @@
 #!/bin/sh
-# This is a modifiable init file for proxmox, init is basically a startup process that busybox runs.
+# This is a modifiable init file for proxmox, init is basically a startup process that busybox (default shell) runs.
 # (C) 2009-2019 Proxmox Server Solutions GmbH <support@proxmox.com>
+# mount proc fs asap
+
+/bin/mount -nt proc proc /proc
+
+echo booted proxmox init with kernel "$BOOT_IMAGE"
 
 export PATH=/sbin:/bin:/usr/bin:/usr/sbin
 
 if [ -f /.cd-info ]; then
     . /.cd-info
 else
-    /bin/echo "Could not source .cd-info file!"
+    echo "Could not source .cd-info file!"
 fi
 
-# busybox needs full paths until proc is mounted
+echo 
+echo "Welcome to the $PRODUCTLONG $RELEASE installer"
+echo "initial setup startup"
 
-/bin/echo "Welcome to the $PRODUCTLONG $RELEASE installer"
-/bin/echo "initial setup startup"
-
-/bin/echo "mounting proc filesystem"
-/bin/mount -nt proc proc /proc
 
 echo "mounting sys filesystem"
 mount -nt sysfs sysfs /sys
@@ -30,7 +32,7 @@ fi
 # sync from the kernel root POV and the installer (ch)root POV
 mount -t devtmpfs devtmpfs /dev
 
-KERNEL_VER=`uname -r`
+KERNEL_VER=$(uname -a)
 
 parse_cmdline() {
     root=
@@ -81,7 +83,7 @@ debugsh_err_reboot() {
     myreboot
 }
 
-echo "comandline: $(cat /proc/cmdline)"
+echo "commandline: $(cat /proc/cmdline)"
 parse_cmdline
 
 # use mdev as firmware loader
@@ -262,7 +264,7 @@ elif [ -n "$root" ]; then
 	fi
 	if test $try -gt 1; then
 	    echo "testing again in 5 seconds"
-	    sleep 5
+	    sleep 1
 	fi
     done
 
@@ -301,8 +303,8 @@ else
 		break;
 	    fi
 	    if test $try -gt 1; then
-		echo "testing again in 5 seconds"
-		sleep 5
+		echo "error, didn't find the ISO image, rescanning"
+		sleep 0.1
 	    fi
 	done
     fi

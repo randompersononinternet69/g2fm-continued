@@ -14,6 +14,7 @@ function win_isoboot {
   loopback -m envblk ${prefix}/null.cpio;
   save_env -s -f (envblk)/null.cfg installiso;
   cat (envblk)/null.cfg;
+  echo Loopback wimboot.xz + install.xz
   loopback wimboot ${prefix}/wimboot.xz;
   loopback install ${prefix}/install.xz;
   swap_hd01;

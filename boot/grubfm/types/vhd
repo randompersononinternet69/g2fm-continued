@@ -10,12 +10,18 @@ icon = nt6
 enable = all
 
 [1]
+menu = vhd/re-ntboot.sh
+title = "Boot Windows NT6.x VHD/VHDX (NTBOOT) Recovery WIM"
+icon = nt6
+enable = all
+
+[2]
 menu = vhd/map.sh
 title = "Boot VHD (map)"
 icon = img
 enable = all
 
-[2]
+[3]
 menu = iso/grubcfg.sh
 condition = iso/grubcfg_test.sh
 title = "Boot VHD (grub.cfg)"

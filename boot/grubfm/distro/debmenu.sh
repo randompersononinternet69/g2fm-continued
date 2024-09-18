@@ -3,7 +3,7 @@ menuentry $"Debian Live" --class debian{
     linux $vmlinuz_img $kcmdline $debian_user $debian_union $debian_locale $linux_extra;
     initrd $initrd_img;
 }
-menuentry $"Debian Installer (submenu)" --class debian{
+menuentry $"Debian Live settings" --class debian{
     configfile /boot/grubfm/distro/debinstmenu.sh
 }
 menuentry $"Devuan Live" --class devuan{

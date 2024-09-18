@@ -13,11 +13,9 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
-clear
-export gfxmode=auto;
-export gfxpayload=keep;
-terminal_output gfxterm;
 echo Starting G2FM beta...
+
+
 echo " "
 # The following code is from agFM for Easy2Boot
 set CPU64=false; set CPU32=false; set MBR=false; set EFI=false; set EFI64=false; set EFI32=false; set MBR32=false; set MBR64=false
@@ -144,5 +142,9 @@ then
     source (${user})/boot/grubfm/config
   fi
 else
+  clear
+  export gfxmode=auto;
+  export gfxpayload=keep;
+  terminal_output gfxterm
   grubfm
 fi
