@@ -39,7 +39,8 @@ Star if you like it!
 
 ## Preview
 
-![Main menu](https://i.imgur.com/zgz3Xeb.png)
+![image](https://github.com/user-attachments/assets/c8540ae1-71c7-4f0e-9d33-b676655fe003)
+
 
 ## Supported architectures
 
