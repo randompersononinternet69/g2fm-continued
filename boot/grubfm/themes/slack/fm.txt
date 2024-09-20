@@ -33,6 +33,11 @@ terminal-box: "term_bkg_*.png"
     top = 100%-55
     left = 36%
     width = 27%
+     + image {file = "dock/space.png"}
+    + vbox {
+        + image {file = "dock/search.png"}
+        + label {text = "[Ctrl+F]" color = "#ffffff"}
+    }    
     + vbox {
         + label {text = "[F1]" color = "#ffffff"}
         + image {file = "dock/hwinfo.png"}
