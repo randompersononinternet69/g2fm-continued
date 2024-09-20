@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root (EFI builds won't work if not run as root)"
   exit
@@ -155,10 +156,11 @@ case "$choice" in
         ;;
 esac
 clear && echo ${RESET}
+# this part of the build doesn't like working on WSL good?
 echo "------------------------------------"
 echo "${YELLOW}x86_64-efi${RESET}"
 echo "------------------------------------"
-echo ${CYAN}
+echo "${CYAN}"
 mkdir build/boot/grubfm/x86_64-efi
 for modules in $(cat arch/x64/optional.lst)
 do
@@ -258,7 +260,7 @@ cp -R boot/grub build/boot/
 
 echo "i386-pc preloader"
 builtin=$(cat arch/legacy/preloader.lst)
-./grub/grub-mkimage -v -d ./grub/i386-pc -p "(cd)/boot/grub" -c arch/legacy/preloader.cfg -o ./build/core.img -O i386-pc $builtin
+./grub/grub-mkimage -v -d ./grub/i386-pc -p "(cd)/boot/grub" -c arch/legacy/preloader.cfg -o ./build/core.img -O i386-pc "$builtin"
 cat grub/i386-pc/cdboot.img build/core.img > build/fmldr
 rm build/core.img
 cp grubfm.elf build/
