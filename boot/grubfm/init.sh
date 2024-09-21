@@ -13,17 +13,38 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
+
 echo Starting G2FM beta...
-
-
+set color_normal=yellow/black
 echo " "
 # The following code is from agFM for Easy2Boot
+echo " "
+echo "----------------------"
+echo "PLATFORM INFORMATION"
+echo "----------------------"
+echo "CPU: ${grub_cpu}"
+echo "Platform: ${grub_platform}"
+echo "Boot drive: $bootdev"
+echo "RAM: ${RAM} MB"
+echo " "
+
 set CPU64=false; set CPU32=false; set MBR=false; set EFI=false; set EFI64=false; set EFI32=false; set MBR32=false; set MBR64=false
+echo "Setting CPU64 to false"
+echo "Setting CPU32 to false"
+echo "Setting MBR to false"
+echo "Setting EFI to false"
+echo "Setting EFI64 to false"
+echo "Setting EFI32 to false"
+echo "Setting MBR32 to false"
+echo "Setting MBR64 to false"
 set CPU32=true
 if cpuid -l; then set CPU64=true; fi
 if [ "${grub_cpu}" == "x86_64" ]; then set CPU64=true; fi
 if $CPU64 == true ; then set CPU32=false ; fi
+echo "Set CPU32 to ${CPU32}"
 if [ "${grub_platform}" == "efi" ]; then set EFI=true; else set MBR=true; fi
+echo "Set MBR to ${MBR}"
+echo "Set EFI to ${EFI}"
 if [ "${grub_cpu}" == "x86_64" -a $EFI = true ]; then set EFI64=true; fi
 if [ "${grub_cpu}" == "i386" -a $EFI = true ]; then set EFI32=true; fi
 if [ $CPU64 = true -a $MBR = true ]; then set MBR64=true; fi
@@ -32,21 +53,10 @@ export MBR EFI MBR32 MBR64 EFI32 EFI64 CPU32 CPU64
 export grub_secureboot=$"Not available"
 stat -r -q -s RAM
 export RAM
-set color_normal=yellow/black
-echo "----------------------"
-echo "SYSTEM INFORMATION"
-echo "----------------------"
-if $MBR; then echo Legacy\\MBR\\CSM ; fi
-if $EFI64; then echo -n "UEFI64 - "; fi
-if $EFI32; then echo -n "UEFI32 - "; fi
-if $CPU32; then echo "32-bit CPU"; fi
-if $CPU64; then echo "64-bit CPU"; fi
-echo Boot drive: $bootdev
-echo RAM: ${RAM} MB
 # a random string of text is shown after the dash, for example: "v1.0.20-235ba555-c959-48b4-a26c-7520a0040e2a"
-echo -n "Version: v1.0.0a";
-echo Build ID:
-cat (memdisk)/boot/grubfm/ver.txt; fi
+echo "Version: v1.0.0a";
+echo -n Build ID:
+cat ${prefix}/boot/grubfm/ver
 export pager=0;
 cat --set=modlist ${prefix}/insmod.lst;
 for module in ${modlist};
@@ -72,14 +82,13 @@ then
   then
     export grub_secureboot=$"Enabled";
     sbpolicy -i;
+    echo "Secure boot is $grub_secureboot";
   fi;
   if [ "${grub_secureboot}" = "0" ];
   then
     export grub_secureboot=$"Disabled";
+    echo "Secure boot is $grub_secureboot";
   fi;
-  # enable mouse/touchpad
-  terminal_input --append mouse;
-echo Secure boot is $grub_secureboot
 else
   search -s -f -q /fmldr;
 fi;
@@ -140,6 +149,7 @@ then
   then
     grubfm_set -u "${user}"
     source (${user})/boot/grubfm/config
+    echo "Loaded custom config from /boot/grubfm/config";
   fi
 else
   clear
@@ -149,3 +159,4 @@ else
   terminal_output gfxterm
   grubfm
 fi
+

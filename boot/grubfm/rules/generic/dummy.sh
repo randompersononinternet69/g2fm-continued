@@ -5,7 +5,10 @@ then
 fi;
 
 hiddenentry " " --hotkey f1 {
-  configfile ${prefix}/hwinfo.sh;
+  echo "Sorry, this crashes GRUB2 - do NOT run - check pinned issue in repo!"
+  sleep 5
+  echo Returning to menu in 5 seconds
+  # configfile ${prefix}/hwinfo.sh;
 }
 
 hiddenentry " " --hotkey f2 {

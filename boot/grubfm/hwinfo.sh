@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Grub2-FileManager.  If not, see <http://www.gnu.org/licenses/>.
-
+# crashes GRUB2 - do NOT run - check pinned issue in repo!
 function calc_volt {
   # bit 7 = 1 (0x80h)
   # the remaining seven bits of the field are set to

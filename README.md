@@ -11,6 +11,8 @@ It's GRUB2... but as a file manager with **LOTS** of features.
 - Windows Installer unattend support
 - Monitor hardware feature (press F1 while in any g2fm menu)
 - Very customizable
+- Can still run, even after the disk is changed, since it runs in RAM!
+- Can be run from any type of writable drive that has at least 64 MB of storage
 
 Based on: [a1ive's grub2 file manager](https://github.com/a1ive/grub2-filemanager)
 
@@ -70,11 +72,11 @@ ARM64, x86, x86_64.
  ./build.sh
 ```
 
-## Boot
+## Boot methods
 
 ### i386-pc
 
-**DO NOT boot g2fm.iso with memdisk!**
+Do **NOT** boot g2fm.iso with memdisk!
 
 #### GRUB4DOS / GRUB Legacy
 
@@ -117,7 +119,10 @@ GRUB2: <https://github.com/tcffan123/grub>
 
 ## USB Installers
 
-- None yet. If you want to have one featured here, please open an issue.
+- USB Installer at <https://github.com/TCFFan123/g2fm-continued/blob/df29f9fe139af7bfa7c327bf2d28865b97d5041e/samples/usb_install.cmd>
+
+> [!NOTE]
+>If you want to have one featured here, please open an issue.
 
 ## Related projects
 
