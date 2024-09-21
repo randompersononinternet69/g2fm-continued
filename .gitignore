@@ -14,3 +14,4 @@ g2fm*.efi
 boot/grubfm/ver.txt
 sync.sh
 .vscode/settings.json
+boot/grubfm/ver.txt
