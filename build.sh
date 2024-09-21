@@ -54,7 +54,7 @@ clear
 echo -n ${RESET}
 clear
 echo "${CYAN}---Making a copy of /boot to /build---"
-cat /proc/sys/kernel/random/uuid >boot/grubfm/ver.txt
+cat /proc/sys/kernel/random/uuid >boot/grubfm/ver
 cp -r boot build/ > /tmp/cp.log 2>&1
 echo "Copy log located at /tmp/cp.log"
 cp grub/locale/*.mo build/boot/grubfm/locale/ > /tmp/localecp.log 2>&1
