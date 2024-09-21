@@ -11,8 +11,7 @@ echo -n "${CYAN}Welcome to the G2FM builder!"
 echo "${CYAN}"-----------------------------------------
 echo
 echo -n "${CYAN}---Installing packages...---".
-sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso > /tmp/install.log 2>&1
-echo "Installation log located at /tmp/install.log"
+sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso wget
 clear
 ./update_grub2.sh
 clear
