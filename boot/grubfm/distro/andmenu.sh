@@ -21,7 +21,7 @@ if [ "${android_install}" = " " ]; then
     }
 else
     menuentry "[+] Install Android" --class settings{
-        export android_install=;
+        export android_install=" ";
         configfile ${prefix}/distro/andmenu.sh;
     }
 fi;

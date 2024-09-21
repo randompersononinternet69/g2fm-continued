@@ -20,7 +20,8 @@ then
 fi;
 
 hiddenentry " " --hotkey f1 {
-  configfile ${prefix}/hwinfo.sh;
+  echo "Sorry, this crashes GRUB2 - do NOT run - check pinned issue in repo!"
+  sleep 5
 }
 
 hiddenentry " " --hotkey f2 {
