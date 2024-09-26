@@ -12,7 +12,7 @@ It's GRUB2... but as a file manager with **LOTS** of features.
 - Monitor hardware feature (press F1 while in any g2fm menu)
 - Very customizable
 - Can still run, even after the disk is changed, since it runs in RAM!
-- Can be run from any type of writable drive that has at least 64 MB of storage
+- Can be run from any type of bootable writable drive that has at least 64 MB of storage
 
 Based on: [a1ive's grub2 file manager](https://github.com/a1ive/grub2-filemanager)
 
