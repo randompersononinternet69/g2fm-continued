@@ -7,7 +7,7 @@ It's GRUB2... but as a file manager with **LOTS** of features.
 ## Features
 
 - A variety of operating systems are supported (Windows XP-11, lot's of Linux distros, etc.)
-- Supports multiple architectures
+- Supports multiple architectures (ARM64, x86, x86_64)
 - Windows Installer unattend support
 - Monitor hardware feature (currently broken)
 - Very customizable
@@ -42,11 +42,6 @@ Star if you like it!
 ## Preview
 
 ![image](https://github.com/user-attachments/assets/c8540ae1-71c7-4f0e-9d33-b676655fe003)
-
-
-## Supported architectures
-
-ARM64, x86, x86_64.
 
 ## Supported types of files
 
