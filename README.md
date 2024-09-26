@@ -9,7 +9,7 @@ It's GRUB2... but as a file manager with **LOTS** of features.
 - A variety of operating systems are supported (Windows XP-11, lot's of Linux distros, etc.)
 - Supports multiple architectures
 - Windows Installer unattend support
-- Monitor hardware feature (press F1 while in any g2fm menu)
+- Monitor hardware feature (currently broken)
 - Very customizable
 - Can still run, even after the disk is changed, since it runs in RAM!
 - Can be run from any type of bootable writable drive that has at least 64 MB of storage
