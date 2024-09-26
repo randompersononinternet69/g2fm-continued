@@ -49,7 +49,7 @@ Star if you like it!
 | :--------------------- | :-----------: | :-----------: | :-----------: |
 | WinPE/Windows Install ISO              |   Supported   |   Supported   |   Supported   |
 | Linux ISO              |   Supported   |   Supported   |   Supported   |
-| Android ISO            |   Supported   |   Supported   |   Supported   |
+| Android x86 ISO            |   Supported   |   Supported   |   Supported   |
 | BSD ISO                |   Supported   | Not supported | Not supported |
 | IMG (Disk Image)       |   Supported   |   Supported   |   Supported   |
 | VHD                    |   Supported   |   Supported   |   Supported   |
