@@ -2,3 +2,4 @@
 *.sh text eol=lf
 null.cfg binary
 NTBOOT binary
+boot/grubfm/types/* ini
