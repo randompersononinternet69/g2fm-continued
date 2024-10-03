@@ -114,7 +114,7 @@ GRUB2: <https://github.com/tcffan123/grub>
 
 ## USB Installers
 
-- WIndows command prompt USB installer at <https://github.com/TCFFan123/g2fm-continued/blob/df29f9fe139af7bfa7c327bf2d28865b97d5041e/samples/usb_install.cmd>
+- Windows command prompt USB installer at <https://github.com/TCFFan123/g2fm-continued/blob/df29f9fe139af7bfa7c327bf2d28865b97d5041e/samples/usb_install.cmd>
 
 > [!NOTE]
 >If you want to have one featured here, please open an issue.
