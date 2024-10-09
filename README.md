@@ -35,7 +35,6 @@ Star if you like it!
 
 - [Preview](#preview)
 - [Supported types of files](#supported-types-of-files)
-- [Download](download-g2fm-here.)
 - [Build](#build)
 - [Boot](#boot-methods)
 - [Source code](#source-code)
