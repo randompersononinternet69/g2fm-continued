@@ -25,7 +25,7 @@ Star if you like it!
 > [!NOTE]
 > We're looking for more contributors!
 >
-> (I'm the only one so far who has made changes in this fork of grubfm. GitHub says there's 10 contributors but that's because this is a fork of grubfm, which has kept the existing contributor history (this is done by GitHub). Ever since the fork was made, it was just me making commits after to this fork.)
+> I'm the only one so far who has made changes in this fork of grubfm. GitHub says there's 10 contributors but that's because this is a fork of grubfm, which has kept the existing contributor history (this is done by GitHub). Ever since the fork was made, it was just me making commits after to this fork.
 >
 > If you find something wrong or want to request a new feature, report it in issues.
 >
