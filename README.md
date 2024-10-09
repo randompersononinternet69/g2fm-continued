@@ -23,18 +23,21 @@ Star if you like it!
 ![GitHub Repo stars](https://img.shields.io/github/stars/TCFFan123/g2fm-continued?style=for-the-badge&logo=github&labelColor=black)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/TCFFan123/g2fm-continued/build.yml?style=for-the-badge&labelColor=black&color=blue)
 > [!NOTE]
-> We're looking for more contributors! (I'm the only one so far who has made changes in this repo. GitHub says there's 10 contributors but that's some weird issue with detaching a fork, I'm the only one who has made changes ever since the detach)
+> We're looking for more contributors!
+>
+> (I'm the only one so far who has made changes in this repo. GitHub says there's 10 contributors but that's because this is a fork of grubfm, and GitHub has kept the existing contributor history. Ever since the fork was made, it was just me making commits after to this fork.)
+>
 > If you find something wrong or want to request a new feature, report it in issues.
+>
 > Think that something could be changed/added in g2fm, and you know GRUB2? Create a pull request with the code for the feature.
 
 ## Table of Contents
 
 - [Preview](#preview)
-- [Supported architectures](#supported-architectures)
 - [Supported types of files](#supported-types-of-files)
 - [Download](download-g2fm-here.)
 - [Build](#build)
-- [Boot](#boot)
+- [Boot](#boot-methods)
 - [Source code](#source-code)
 - [USB Installers](#usb-installers)
 - [Related projects](#related-projects)
