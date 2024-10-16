@@ -43,7 +43,8 @@ Star if you like it!
 
 ## Preview
 
-![image](https://github.com/user-attachments/assets/c8540ae1-71c7-4f0e-9d33-b676655fe003)
+![image](https://github.com/user-attachments/assets/1502bd3a-6bde-41c5-9e13-f09cf3854c80)
+
 
 ## Supported types of files
 
