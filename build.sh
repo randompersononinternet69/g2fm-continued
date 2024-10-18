@@ -3,10 +3,6 @@ if [ "$(id -u)" -ne 0 ]; then
   echo "Please run as root (EFI builds won't work if not run as root)"
   exit
 fi
-# if --no-clear is specified, just make clear null for now until end of script
-if [ "$1" = "--no-clear" ]; then
-    alias clear="echo continue >/dev/null"
-fi
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RESET='\033[0m' # No Color
@@ -67,7 +63,7 @@ for po in */fm.po; do
   msgfmt ${po} -o ../build/boot/grubfm/locale/fm/"${po%/*}".mo > /tmp/msgfmt.log 2>&1
 done
 cd ..
-clear
+#clear
 
 echo "Language"
 echo "1. Simplified Chinese"
@@ -160,7 +156,8 @@ case "$choice" in
         echo "en_US"
         ;;
 esac
-clear && echo ${RESET}
+# clear 
+echo ${RESET}
 # this part of the build doesn't like working on WSL good?
 echo "------------------------------------"
 echo "${YELLOW}x86_64-efi${RESET}"
@@ -184,7 +181,7 @@ rm build/boot/grubfm/*.xz
 modules=$(cat arch/x64/builtin.lst)
 ./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o g2fmx64.efi -O x86_64-efi $modules
 rm build/memdisk.xz
-clear
+#clear
 echo "${RESET}"
 echo "------------------------------------"
 echo "${YELLOW}i386-efi${RESET}"
@@ -207,7 +204,7 @@ rm build/boot/grubfm/*.xz
 modules=$(cat arch/ia32/builtin.lst)
 ./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o g2fmia32.efi -O i386-efi $modules
 rm build/memdisk.xz
-clear
+# clear
 ${RESET}
 echo "------------------------------------"
 echo "${YELLOW}arm64-efi${RESET}"
@@ -231,7 +228,7 @@ modules=$(cat arch/aa64/builtin.lst)
 ./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/arm64-efi -p "(memdisk)/boot/grubfm" -c arch/aa64/config.cfg -o grubfmaa64.efi -O arm64-efi $modules
 rm build/memdisk.xz
 ${RESET}
-clear
+# clear
 echo "------------------------------------"
 echo "${YELLOW}i386-multiboot${RESET}"
 echo "------------------------------------"
