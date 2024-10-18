@@ -253,7 +253,7 @@ modules=$(cat arch/multiboot/builtin.lst)
 ./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/i386-multiboot -p "(memdisk)/boot/grubfm" -c arch/multiboot/config.cfg -o grubfm.elf -O i386-multiboot $modules
 rm build/memdisk.xz
 ${RESET}
-clear
+# clear
 echo "------------------------------------------------------------------------"
 echo "${YELLOW}making efi.img using files in the EFI directory${RESET}"
 echo "------------------------------------------------------------------------"
