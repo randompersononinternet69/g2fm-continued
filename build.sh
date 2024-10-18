@@ -209,8 +209,8 @@ echo "------------------------------------"
 echo "${YELLOW}arm64-efi${RESET}"
 echo "------------------------------------"
 mkdir build/boot/grubfm/arm64-efi
-for modules in $(cat arch/aa64/builtin.lst)
 echo "${CYAN}copying "
+for modules in $(cat arch/aa64/builtin.lst)
 do
     echo "${CYAN}${modules}.mod, "
     cp grub/arm64-efi/"${modules}".mod build/boot/grubfm/arm64-efi/
@@ -232,8 +232,8 @@ echo "------------------------------------"
 echo "${YELLOW}i386-multiboot${RESET}"
 echo "------------------------------------"
 mkdir build/boot/grubfm/i386-multiboot
-for modules in $(cat arch/multiboot/builtin.lst)
-echo "${CYAN}copying "  
+echo "${CYAN}copying "
+for modules in $(cat arch/multiboot/builtin.lst)  
 do
     echo "${CYAN}${modules}.mod, "
     cp grub/i386-multiboot/"${modules}".mod build/boot/grubfm/i386-multiboot/
