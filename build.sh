@@ -13,7 +13,7 @@ echo
 echo -n "${CYAN}---Installing packages...---".
 sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso wget
 clear
-./update_grub2.sh
+sudo ./update_grub2.sh
 clear
 echo "${CYAN}Check for missing packages (everything should be found)"
 echo -n "${CYAN}Checking for gettext... "
