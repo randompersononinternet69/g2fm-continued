@@ -7,7 +7,7 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RESET='\033[0m' # No Color
 echo "${CYAN}"-----------------------------------------
-echo -n "${CYAN}Welcome to the G2FM builder!"
+echo "${CYAN}" Welcome to the G2FM builder!
 echo "${CYAN}"-----------------------------------------
 echo
 echo -n "${CYAN}---Installing packages...---".
