@@ -3,6 +3,10 @@ if [ "$(id -u)" -ne 0 ]; then
   echo "Please run as root (EFI builds won't work if not run as root)"
   exit
 fi
+# if --no-clear is specified, just make clear null for now until end of script
+if [ "$1" = "--no-clear" ]; then
+    alias clear="echo continue >/dev/null"
+fi
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RESET='\033[0m' # No Color
