@@ -1,6 +1,6 @@
 #!/usr/bin/sh
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root (EFI builds won't work if not run as root)"
+if [ "$(id -u)" -ne 0 ]; then
+  echo "Please run as root (EFI builds won't work if not run as root)"
   exit
 fi
 YELLOW='\033[0;33m'
@@ -163,9 +163,10 @@ echo "${YELLOW}x86_64-efi${RESET}"
 echo "------------------------------------"
 echo "${CYAN}"
 mkdir build/boot/grubfm/x86_64-efi
+echo "${CYAN}copying "
 for modules in $(cat arch/x64/builtin.lst)
 do
-    echo "${CYAN}copying ${modules}.mod"
+    echo -n "${CYAN}${modules}.mod, " 
     cp grub/x86_64-efi/"${modules}".mod build/boot/grubfm/x86_64-efi/
 done
 # cp arch/x64/*.efi build/boot/grubfm
@@ -185,9 +186,10 @@ echo "------------------------------------"
 echo "${YELLOW}i386-efi${RESET}"
 echo "------------------------------------"
 mkdir build/boot/grubfm/i386-efi
+echo "${CYAN}copying "
 for modules in $(cat arch/ia32/builtin.lst)
 do
-    echo "${CYAN}copying ${modules}.mod"
+    echo "${CYAN}${modules}.mod, "
     cp grub/i386-efi/"${modules}".mod build/boot/grubfm/i386-efi/
 done
 # cp arch/ia32/*.efi build/boot/grubfm
@@ -208,8 +210,9 @@ echo "${YELLOW}arm64-efi${RESET}"
 echo "------------------------------------"
 mkdir build/boot/grubfm/arm64-efi
 for modules in $(cat arch/aa64/builtin.lst)
+echo "${CYAN}copying "
 do
-    echo "${CYAN}copying ${modules}.mod"
+    echo "${CYAN}${modules}.mod, "
     cp grub/arm64-efi/"${modules}".mod build/boot/grubfm/arm64-efi/
 done
 # cp arch/aa64/*.efi build/boot/grubfm
@@ -230,8 +233,9 @@ echo "${YELLOW}i386-multiboot${RESET}"
 echo "------------------------------------"
 mkdir build/boot/grubfm/i386-multiboot
 for modules in $(cat arch/multiboot/builtin.lst)
+echo "${CYAN}copying "  
 do
-    echo "${CYAN}copying ${modules}.mod"
+    echo "${CYAN}${modules}.mod, "
     cp grub/i386-multiboot/"${modules}".mod build/boot/grubfm/i386-multiboot/
 done
 cp arch/multiboot/*.xz build/boot/grubfm/
@@ -261,8 +265,6 @@ mcopy -i build/efi.img g2fmia32.efi ::EFI/BOOT/BOOTIA32.EFI
 echo "------------------------------------------------------------------------"
 echo "${YELLOW}Loopback support${RESET}"
 echo "------------------------------------------------------------------------"
-mkdir boot/grub
-cp loopback/loopback.cfg boot/grub/
 cp -R boot/grub build/boot/
 echo "------------------------------------------------------------------------"
 echo "i386-pc preloader"
