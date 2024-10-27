@@ -12,7 +12,7 @@ do
     echo "Starting build with value: ${i}"
     echo "${i}" | ./build.sh
     echo "Copying files"
-    cp grubfm.iso g2fm_multiarch.iso loadfm samples/
+    cp grubfm.iso loadfm samples/
     cp grubfm*.efi g2fm*.efi samples/
     echo "Creating 7z file"
     cd samples

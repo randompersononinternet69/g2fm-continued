@@ -56,6 +56,8 @@ function to_win_ver {
   fi;
 }
 
+# get device info, including size, filesystem and label
+# result is stored in $info
 function dev_info {
   unset size;
   unset fs;
@@ -103,22 +105,30 @@ if [ -f "(${device})/boot/grub/grub.cfg" ];
   fi; 
 
 # not tested, but it should work under EFI. Legacy BIOS will fail to load this though
-menuentry "Boot Ventoy" {
-  # set terminal output to console
-  terminal_output console
-  
-  # load Ventoy EFI bootloader for EFI systems
-  if [ "${grub_platform}" == "efi" ]; then
-    set root=${device}
-    echo Found ventoy EFI bootloader on ${device}
-    chainloader (${root})/EFI/BOOT/ventoyx64.efi
-  # load Ventoy BIOS bootloader for Legacy BIOS systems
+for ventoy_device in (hd*,*); do
+  if [ -e "${ventoy_device}/EFI/BOOT/ventoyx64.efi" ]; then
+    echo "Found ventoy bootloader on ${ventoy_device}"
+    menuentry "Boot Ventoy" {
+      # set terminal output to console
+      terminal_output console
+
+      # load Ventoy EFI bootloader for EFI systems
+      if [ "${grub_platform}" == "efi" ]; then
+        echo "Loading Ventoy EFI bootloader"
+        set root=${ventoy_device}
+        chainloader (${root})/EFI/BOOT/ventoyx64.efi
+      # load Ventoy BIOS bootloader for Legacy BIOS systems
+      else
+        echo "Loading Ventoy BIOS bootloader"
+        set root=${ventoy_device}
+        chainloader (${root})/ventoy/core.img
+      fi
+    }
+    break
   else
-    set root=${device}
-    echo Found ventoy BIOS bootloader on ${device}
-    chainloader (${root})/ventoy/core.img
+    echo "Did not find ventoy EFI bootloader on ${ventoy_device}"
   fi
-}
+done
 
 menuentry "Search for /boot/grubfm/config and load it" {
   search --set=user -f -q /boot/grubfm/config
@@ -198,7 +208,6 @@ menuentry "Search for /boot/grubfm/config and load it" {
       then
         echo "Skip NT ${sysver}";
       else
-        # this one will just load a specific installation of Windows, but via g2fm with NTBOOT
         menuentry $"Boot ${winver} on ${device} ${info}" "${device}" --class nt6 {
           set root="${2}";
           set lang=en_US;

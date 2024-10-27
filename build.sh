@@ -1,20 +1,19 @@
 #!/usr/bin/sh
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root (EFI builds won't work if not run as root)"
+if [ "$(id -u)" -ne 0 ]; then
+  echo "Please run as root (EFI builds won't work if not run as root)"
   exit
 fi
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 RESET='\033[0m' # No Color
 echo "${CYAN}"-----------------------------------------
-echo -n "${CYAN}Welcome to the G2FM builder!"
+echo "${CYAN}" Welcome to the G2FM builder!
 echo "${CYAN}"-----------------------------------------
 echo
 echo -n "${CYAN}---Installing packages...---".
-sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso > /tmp/install.log 2>&1
-echo "Installation log located at /tmp/install.log"
+sudo -E apt-get -y install gettext grub2-common genisoimage p7zip-full mtools xorriso wget
 clear
-./update_grub2.sh
+sudo ./update_grub2.sh
 clear
 echo "${CYAN}Check for missing packages (everything should be found)"
 echo -n "${CYAN}Checking for gettext... "
@@ -64,7 +63,7 @@ for po in */fm.po; do
   msgfmt ${po} -o ../build/boot/grubfm/locale/fm/"${po%/*}".mo > /tmp/msgfmt.log 2>&1
 done
 cd ..
-clear
+#clear
 
 echo "Language"
 echo "1. Simplified Chinese"
@@ -157,16 +156,18 @@ case "$choice" in
         echo "en_US"
         ;;
 esac
-clear && echo ${RESET}
+# clear 
+echo ${RESET}
 # this part of the build doesn't like working on WSL good?
 echo "------------------------------------"
 echo "${YELLOW}x86_64-efi${RESET}"
 echo "------------------------------------"
 echo "${CYAN}"
 mkdir build/boot/grubfm/x86_64-efi
+echo "${CYAN}copying "
 for modules in $(cat arch/x64/builtin.lst)
 do
-    echo "${CYAN}copying ${modules}.mod"
+    echo -n "${CYAN}${modules}.mod, " 
     cp grub/x86_64-efi/"${modules}".mod build/boot/grubfm/x86_64-efi/
 done
 # cp arch/x64/*.efi build/boot/grubfm
@@ -180,15 +181,16 @@ rm build/boot/grubfm/*.xz
 modules=$(cat arch/x64/builtin.lst)
 ./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/x86_64-efi -p "(memdisk)/boot/grubfm" -c arch/x64/config.cfg -o g2fmx64.efi -O x86_64-efi $modules
 rm build/memdisk.xz
-clear
+#clear
 echo "${RESET}"
 echo "------------------------------------"
 echo "${YELLOW}i386-efi${RESET}"
 echo "------------------------------------"
 mkdir build/boot/grubfm/i386-efi
+echo "${CYAN}copying "
 for modules in $(cat arch/ia32/builtin.lst)
 do
-    echo "${CYAN}copying ${modules}.mod"
+    echo "${CYAN}${modules}.mod, "
     cp grub/i386-efi/"${modules}".mod build/boot/grubfm/i386-efi/
 done
 # cp arch/ia32/*.efi build/boot/grubfm
@@ -202,15 +204,16 @@ rm build/boot/grubfm/*.xz
 modules=$(cat arch/ia32/builtin.lst)
 ./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/i386-efi -p "(memdisk)/boot/grubfm" -c arch/ia32/config.cfg -o g2fmia32.efi -O i386-efi $modules
 rm build/memdisk.xz
-clear
+# clear
 ${RESET}
 echo "------------------------------------"
 echo "${YELLOW}arm64-efi${RESET}"
 echo "------------------------------------"
 mkdir build/boot/grubfm/arm64-efi
+echo "${CYAN}copying "
 for modules in $(cat arch/aa64/builtin.lst)
 do
-    echo "${CYAN}copying ${modules}.mod"
+    echo "${CYAN}${modules}.mod, "
     cp grub/arm64-efi/"${modules}".mod build/boot/grubfm/arm64-efi/
 done
 # cp arch/aa64/*.efi build/boot/grubfm
@@ -225,14 +228,15 @@ modules=$(cat arch/aa64/builtin.lst)
 ./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/arm64-efi -p "(memdisk)/boot/grubfm" -c arch/aa64/config.cfg -o grubfmaa64.efi -O arm64-efi $modules
 rm build/memdisk.xz
 ${RESET}
-clear
+# clear
 echo "------------------------------------"
 echo "${YELLOW}i386-multiboot${RESET}"
 echo "------------------------------------"
 mkdir build/boot/grubfm/i386-multiboot
-for modules in $(cat arch/multiboot/builtin.lst)
+echo "${CYAN}copying "
+for modules in $(cat arch/multiboot/builtin.lst)  
 do
-    echo "${CYAN}copying ${modules}.mod"
+    echo "${CYAN}${modules}.mod, "
     cp grub/i386-multiboot/"${modules}".mod build/boot/grubfm/i386-multiboot/
 done
 cp arch/multiboot/*.xz build/boot/grubfm/
@@ -249,7 +253,7 @@ modules=$(cat arch/multiboot/builtin.lst)
 ./grub/grub-mkimage -v -m ./build/memdisk.xz -d ./grub/i386-multiboot -p "(memdisk)/boot/grubfm" -c arch/multiboot/config.cfg -o grubfm.elf -O i386-multiboot $modules
 rm build/memdisk.xz
 ${RESET}
-clear
+# clear
 echo "------------------------------------------------------------------------"
 echo "${YELLOW}making efi.img using files in the EFI directory${RESET}"
 echo "------------------------------------------------------------------------"
@@ -262,8 +266,6 @@ mcopy -i build/efi.img g2fmia32.efi ::EFI/BOOT/BOOTIA32.EFI
 echo "------------------------------------------------------------------------"
 echo "${YELLOW}Loopback support${RESET}"
 echo "------------------------------------------------------------------------"
-mkdir boot/grub
-cp loopback/loopback.cfg boot/grub/
 cp -R boot/grub build/boot/
 echo "------------------------------------------------------------------------"
 echo "i386-pc preloader"

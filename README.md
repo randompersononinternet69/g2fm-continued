@@ -2,17 +2,17 @@
 
 ![Static Badge](https://img.shields.io/badge/IN_BETA!-red?style=for-the-badge)
 
-It's GRUB2... but as a file manager with **LOTS** of features.
+It's GRUB2... but as a file manager with lots of features.
 
 ## Features
 
 - A variety of operating systems are supported (Windows XP-11, lot's of Linux distros, etc.)
-- Supports multiple architectures
+- Supports multiple architectures (ARM64, x86, x86_64)
 - Windows Installer unattend support
-- Monitor hardware feature (press F1 while in any g2fm menu)
+- Monitor hardware feature (currently broken)
 - Very customizable
 - Can still run, even after the disk is changed, since it runs in RAM!
-- Can be run from any type of writable drive that has at least 64 MB of storage
+- Can be run from any type of bootable writable drive that has at least 64 MB of storage
 
 Based on: [a1ive's grub2 file manager](https://github.com/a1ive/grub2-filemanager)
 
@@ -23,30 +23,28 @@ Star if you like it!
 ![GitHub Repo stars](https://img.shields.io/github/stars/TCFFan123/g2fm-continued?style=for-the-badge&logo=github&labelColor=black)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/TCFFan123/g2fm-continued/build.yml?style=for-the-badge&labelColor=black&color=blue)
 > [!NOTE]
-> We're looking for more contributors! (I'm the only one so far who has made changes in this repo. GitHub says there's 10 contributors but that's some weird issue with detaching a fork, I'm the only one who has made changes ever since the detach)
+> We're looking for more contributors!
+>
+> I'm the only one so far who has made changes in this fork of grubfm. GitHub says there's 10 contributors but that's because this is a fork of grubfm, which has kept the existing contributor history (this is done by GitHub). Ever since the fork was made, it was just me making commits after to this fork.
+>
 > If you find something wrong or want to request a new feature, report it in issues.
+>
 > Think that something could be changed/added in g2fm, and you know GRUB2? Create a pull request with the code for the feature.
 
 ## Table of Contents
 
 - [Preview](#preview)
-- [Supported architectures](#supported-architectures)
 - [Supported types of files](#supported-types-of-files)
-- [Download](download-g2fm-here.)
 - [Build](#build)
-- [Boot](#boot)
+- [Boot](#boot-methods)
 - [Source code](#source-code)
 - [USB Installers](#usb-installers)
 - [Related projects](#related-projects)
 
 ## Preview
 
-![image](https://github.com/user-attachments/assets/c8540ae1-71c7-4f0e-9d33-b676655fe003)
+![image](https://github.com/user-attachments/assets/1502bd3a-6bde-41c5-9e13-f09cf3854c80)
 
-
-## Supported architectures
-
-ARM64, x86, x86_64.
 
 ## Supported types of files
 
@@ -54,7 +52,7 @@ ARM64, x86, x86_64.
 | :--------------------- | :-----------: | :-----------: | :-----------: |
 | WinPE/Windows Install ISO              |   Supported   |   Supported   |   Supported   |
 | Linux ISO              |   Supported   |   Supported   |   Supported   |
-| Android ISO            |   Supported   |   Supported   |   Supported   |
+| Android x86 ISO            |   Supported   |   Supported   |   Supported   |
 | BSD ISO                |   Supported   | Not supported | Not supported |
 | IMG (Disk Image)       |   Supported   |   Supported   |   Supported   |
 | VHD                    |   Supported   |   Supported   |   Supported   |
@@ -119,7 +117,7 @@ GRUB2: <https://github.com/tcffan123/grub>
 
 ## USB Installers
 
-- WIndows command prompt USB installer at <https://github.com/TCFFan123/g2fm-continued/blob/df29f9fe139af7bfa7c327bf2d28865b97d5041e/samples/usb_install.cmd>
+- Windows command prompt USB installer at <https://github.com/TCFFan123/g2fm-continued/blob/df29f9fe139af7bfa7c327bf2d28865b97d5041e/samples/usb_install.cmd>
 
 > [!NOTE]
 >If you want to have one featured here, please open an issue.

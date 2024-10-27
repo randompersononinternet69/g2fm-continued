@@ -16,6 +16,15 @@
 
 echo Starting G2FM beta...
 set color_normal=yellow/black
+if cpuid -l;
+then
+  export CPU=64;
+else
+  export CPU=32;
+fi
+stat -r -q -s RAM;
+export RAM;
+
 echo " "
 # The following code is from agFM for Easy2Boot
 echo " "
