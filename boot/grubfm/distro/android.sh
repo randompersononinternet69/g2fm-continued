@@ -10,4 +10,4 @@ export acpi=" ";
 export autoinstall=" ";
 export autoupdate=" ";
 export android="(loop)"
-configfile ${prefix}/distro/andmenu.sh;
+configfile ${prefix}/distro/andmenu.sh
