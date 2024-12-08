@@ -73,12 +73,12 @@ else
 fi;
 
 if [ "${acpi}" = " " ]; then
-    menuentry "[ ] No ACPI and no setup wizard" --class settings{
-        export acpi="acpi=off SETUPWIZARD=0";
+    menuentry "[ ] No ACPI  --class settings{
+        export acpi="acpi=off";
         configfile ${prefix}/distro/andmenu.sh
     }
 else
-    menuentry "[+] No ACPI and no setup wizard" --class settings{
+    menuentry "[+] No ACPI" --class settings{
         export acpi=" ";
         configfile ${prefix}/distro/andmenu.sh;
     }
