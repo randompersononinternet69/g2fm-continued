@@ -10,7 +10,7 @@ for lang in en_US
 do
     echo "Processing language: ${lang}"
     echo "Starting build with value: ${i}"
-    echo "${i}" | sudo ./build.sh
+    sudo ./build.sh
     echo "Copying files"
     cp grubfm.iso loadfm samples/
     cp grubfm*.efi g2fm*.efi samples/
