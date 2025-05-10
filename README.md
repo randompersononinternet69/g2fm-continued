@@ -3,6 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/IN_BETA!-red?style=for-the-badge)
 
 It's GRUB2... but as a file manager with lots of features.
+**project on pause**
 
 ## Features
 
